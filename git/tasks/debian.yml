@@ -3,7 +3,9 @@
   apt_repository:
     repo: ppa:git-core/ppa
     filename: git
+  become: true
 
 - name: Install git via apt
   apt:
     name: git=*
+  become: true
