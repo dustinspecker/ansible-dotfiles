@@ -7,7 +7,7 @@
 1. Install `ansible-playbook`
 1. Clone this git repository
 1. Navigate to the cloned repository
-1. `anisible-playbook -i hosts dev-env.yml --ask-become-pass`
+1. `ansible-playbook -i hosts dev-env.yml --ask-become-pass`
 
 ## Sets Up
 
