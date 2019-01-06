@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    image: geerlingguy/docker-ubuntu1804-ansible
+    image: ubuntu
     image_version: latest
     privileged: true
 provisioner:
