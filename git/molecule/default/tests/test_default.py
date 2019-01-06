@@ -15,5 +15,4 @@ def test_git_installed(host):
 
 
 def test_gitconfig_copied(host):
-    home_dir = host.user().home
-    assert host.file("{home_dir}/.gitconfig".format(home_dir=home_dir)).exists
+    assert host.file("/home/ubuntu/.gitconfig").exists
