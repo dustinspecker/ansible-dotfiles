@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: git
+    state: latest

@@ -3,4 +3,5 @@
 
 - name: set up dev env
   hosts: all
-  roles: []
+  roles:
+    - {role: git, tags: ['git']}
