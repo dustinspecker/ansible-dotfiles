@@ -9,7 +9,6 @@ platforms:
   - name: instance
     image: ubuntu
     image_version: latest
-    privileged: true
 provisioner:
   name: ansible
   lint:
