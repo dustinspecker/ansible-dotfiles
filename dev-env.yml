@@ -1,0 +1,6 @@
+---
+# This playbook sets up a dev environment.
+
+- name: set up dev env
+  hosts: all
+  roles: []
