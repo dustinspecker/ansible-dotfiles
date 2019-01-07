@@ -1,4 +1,5 @@
 ---
-- homebrew:
+- name: Install git via brew
+  homebrew:
     name: git
     state: latest
