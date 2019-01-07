@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: vim
+    state: latest

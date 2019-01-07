@@ -5,3 +5,4 @@
   hosts: all
   roles:
     - {role: git, tags: ['git']}
+    - {role: vim, tags: ['vim']}

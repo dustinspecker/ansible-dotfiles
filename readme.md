@@ -12,6 +12,7 @@
 ## Sets Up
 
 1. Git
+1. Vim with vim-plug
 
 ## How to Create New Roles
 
