@@ -1,0 +1,6 @@
+---
+- name: install gitk via apt
+  apt:
+    name: gitk=*
+  become: true
+  become_user: root
