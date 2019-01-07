@@ -4,6 +4,7 @@
 - name: set up dev env
   hosts: all
   roles:
+    - {role: bat, tags: ['bat']}
     - {role: git, tags: ['git']}
     - {role: gitk, tags: ['gitk']}
     - {role: vim, tags: ['vim']}

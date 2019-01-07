@@ -11,6 +11,7 @@
 
 ## Sets Up
 
+1. Bat
 1. Git
 1. Gitk
 1. Vim with vim-plug

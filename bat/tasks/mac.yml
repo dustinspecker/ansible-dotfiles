@@ -1,0 +1,4 @@
+---
+- homebrew:
+    name: bat
+    state: latest
