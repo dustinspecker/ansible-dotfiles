@@ -7,12 +7,12 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_git_apt_repo_setup(host):
-    assert host.file("/etc/apt/sources.list.d/git.list").exists
+    assert host.file('/etc/apt/sources.list.d/git.list').exists
 
 
 def test_git_installed(host):
-    assert host.package("git").is_installed
+    assert host.package('git').is_installed
 
 
 def test_gitconfig_copied(host):
-    assert host.file("/home/ubuntu/.gitconfig").exists
+    assert host.file('/home/ubuntu/.gitconfig').exists
