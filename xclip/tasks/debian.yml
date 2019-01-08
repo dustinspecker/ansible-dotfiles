@@ -1,0 +1,6 @@
+---
+- name: Install xclip via apt
+  apt:
+    name: xclip=*
+  become: true
+  become_user: root

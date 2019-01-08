@@ -15,6 +15,7 @@
 1. Git
 1. Gitk
 1. Vim with vim-plug
+1. Xclip (Debian Only) (required for vim-fakeclip to work on Debian)
 
 ## How to Create New Roles
 
