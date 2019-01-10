@@ -2,6 +2,21 @@
 - import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
+- name: create ~/.zfunctions directory
+  file:
+    path: ~/.zfunctions
+    state: directory
+
+- name: install prompt_pure_setup zfunction
+  get_url:
+    url: https://raw.githubusercontent.com/sindresorhus/pure/master/pure.zsh
+    dest: ~/.zfunctions/prompt_pure_setup
+
+- name: install async zfunction
+  get_url:
+    url: https://raw.githubusercontent.com/sindresorhus/pure/master/async.zsh
+    dest: ~/.zfunctions/async
+
 - name: copy zshrc ~/.zshrc
   copy:
     src: zshrc

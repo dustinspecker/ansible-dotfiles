@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Installs and configures zsh. Sets user's default shell to /bin/zsh.
+Installs and configures zsh. Sets user's default shell to /bin/zsh. Sets up pure prompt.
 
 Requirements
 ------------
