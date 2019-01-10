@@ -24,3 +24,7 @@ def test_vim_plug_installed(host):
 
 def test_vim_plugins_installed(host):
     assert host.file('/home/ubuntu/.vim/plugged').exists
+
+
+def test_vim_has_clipboard_support(host):
+    assert host.run_expect([0], "vim --version | grep +clipboard")

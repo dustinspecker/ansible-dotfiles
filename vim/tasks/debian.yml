@@ -12,5 +12,6 @@
   vars:
     packages:
       - vim=*
+      - vim-gui-common=*
   become: true
   become_user: root

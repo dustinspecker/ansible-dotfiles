@@ -10,8 +10,6 @@ Git is required for vim-plug to install plugins.
 
 On Mac, it is expected that homebrew has been installed.
 
-On Linux, xclip is expected to be installed so copy/paste to/from system buffer works.
-
 Role Variables
 --------------
 
