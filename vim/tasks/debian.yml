@@ -8,6 +8,9 @@
 
 - name: Install vim via apt
   apt:
-    name: vim=*
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - vim=*
   become: true
   become_user: root
