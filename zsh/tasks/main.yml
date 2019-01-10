@@ -1,0 +1,13 @@
+---
+- import_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: copy zshrc ~/.zshrc
+  copy:
+    src: zshrc
+    dest: ~/.zshrc
+
+- name: change default shell to /bin/zsh
+  command: "chsh -s /bin/zsh {{ ansible_user_id }}"
+  when: ansible_user_shell != '/bin/zsh'
+  become: true

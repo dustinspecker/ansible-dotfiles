@@ -8,3 +8,4 @@
     - {role: git, tags: ['git']}
     - {role: gitk, tags: ['gitk']}
     - {role: vim, tags: ['vim']}
+    - {role: zsh, tags: ['zsh']}

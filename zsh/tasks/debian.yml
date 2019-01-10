@@ -1,0 +1,6 @@
+---
+- name: install zsh via apt
+  apt:
+    name: zsh=*
+  become: true
+  become_user: root
