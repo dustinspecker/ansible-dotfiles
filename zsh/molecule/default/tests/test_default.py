@@ -32,3 +32,17 @@ def test_zsh_syntax_highlighting_enabled(host):
 
     assert (expected_file_path in zsh_source.stderr)
     assert ('no such file' not in zsh_source.stderr)
+
+
+def test_zsh_incremental_search_pattern_bound(host):
+    backward_bind = (
+        '/bin/zsh -i -c "bindkey -a | '
+        'grep \'\\"/\\" history-incremental-pattern-search-backward\'"'
+    )
+    forward_bind = (
+        '/bin/zsh -i -c "bindkey -a | '
+        'grep \'\\"?\\" history-incremental-pattern-search-forward\'"'
+    )
+
+    assert host.run_expect([0], backward_bind)
+    assert host.run_expect([0], forward_bind)

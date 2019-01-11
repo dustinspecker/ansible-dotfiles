@@ -18,6 +18,11 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# Keybindings
+bindkey -M vicmd "/" history-incremental-pattern-search-backward
+bindkey -M vicmd "?" history-incremental-pattern-search-forward
+# End of keybindings
+
 # Setup pure prompt
 autoload -U promptinit
 promptinit
