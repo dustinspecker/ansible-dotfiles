@@ -17,7 +17,7 @@
 1. Git
 1. Gitk
 1. Vim with vim-plug
-1. Zsh (with pure-prompt)
+1. Zsh (with pure-prompt and z)
 
 ## How to Create New Roles
 

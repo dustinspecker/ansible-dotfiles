@@ -46,3 +46,7 @@ def test_zsh_incremental_search_pattern_bound(host):
 
     assert host.run_expect([0], backward_bind)
     assert host.run_expect([0], forward_bind)
+
+
+def test_zsh_z_tool_sourced(host):
+    assert host.run_expect([0], '/bin/zsh -i -c "z --help"')

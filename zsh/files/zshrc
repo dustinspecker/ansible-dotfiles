@@ -29,6 +29,10 @@ promptinit
 prompt pure
 # End of setup pure prompt
 
+# Source scripts
+source ~/.zscripts/z.sh
+# End source scripts
+
 # Setup zsh-syntax-highlighting
 # This must be last in zshrc
 source ~/.zscripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
