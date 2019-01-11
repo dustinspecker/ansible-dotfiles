@@ -23,3 +23,8 @@ autoload -U promptinit
 promptinit
 prompt pure
 # End of setup pure prompt
+
+# Setup zsh-syntax-highlighting
+# This must be last in zshrc
+source ~/.zscripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# End setup zsh-syntax-highlighting

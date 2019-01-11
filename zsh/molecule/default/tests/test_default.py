@@ -20,3 +20,15 @@ def test_zshrc_is_user_default_shell(host):
 
 def test_zsh_pure_prompt_is_selected(host):
     assert host.run_expect([0], '/bin/zsh -i -c "prompt -c | grep pure"')
+
+
+def test_zsh_syntax_highlighting_enabled(host):
+    zsh_source = host.run('/bin/zsh -i -o SOURCE_TRACE')
+
+    expected_file_path = (
+        '/home/ubuntu/.zscripts/zsh-syntax-highlighting/'
+        'zsh-syntax-highlighting.zsh'
+    )
+
+    assert (expected_file_path in zsh_source.stderr)
+    assert ('no such file' not in zsh_source.stderr)

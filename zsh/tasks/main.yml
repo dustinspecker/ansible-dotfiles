@@ -17,6 +17,17 @@
     url: https://raw.githubusercontent.com/sindresorhus/pure/master/async.zsh
     dest: ~/.zfunctions/async
 
+- name: create ~/.zscripts directory
+  file:
+    path: ~/.zscripts
+    state: directory
+
+- name: clone zsh-syntax-highlighting
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting
+    dest: ~/.zscripts/zsh-syntax-highlighting
+    version: master
+
 - name: copy zshrc ~/.zshrc
   copy:
     src: zshrc
