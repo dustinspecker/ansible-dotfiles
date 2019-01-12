@@ -4,10 +4,8 @@
     repo: ppa:git-core/ppa
     filename: git
   become: true
-  become_user: root
 
 - name: Install git via apt
   apt:
     name: git=*
   become: true
-  become_user: root
