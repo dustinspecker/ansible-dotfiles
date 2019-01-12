@@ -2,6 +2,8 @@
 
 > I DevOps'd my dotfiles
 
+[![Build Status](https://travis-ci.org/dustinspecker/ansible-dotfiles.svg?branch=master)](https://travis-ci.org/dustinspecker/ansible-dotfiles)
+
 ## Usage
 
 1. Install `ansible-playbook`
