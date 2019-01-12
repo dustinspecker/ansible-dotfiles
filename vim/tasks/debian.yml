@@ -4,7 +4,6 @@
     repo: ppa:jonathonf/vim
     filename: vim
   become: true
-  become_user: root
 
 - name: Install vim via apt
   apt:
@@ -14,4 +13,3 @@
       - vim=*
       - vim-gui-common=*
   become: true
-  become_user: root
