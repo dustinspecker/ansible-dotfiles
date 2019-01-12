@@ -1,0 +1,20 @@
+---
+sudo: required
+language: python
+services:
+  - docker
+matrix:
+  include:
+  - env: ROLE=bat
+  - env: ROLE=git
+  - env: ROLE=gitk
+  - env: ROLE=tmux
+  - env: ROLE=vim
+  - env: ROLE=zsh
+before_install:
+  - sudo apt-get -qq update
+  - cd ./$ROLE
+install:
+  - pip install molecule docker
+script:
+  - molecule test
