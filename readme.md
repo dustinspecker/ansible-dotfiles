@@ -16,6 +16,7 @@
 1. Bat
 1. Git
 1. Gitk
+1. Tmux with (tmux package manager)
 1. Vim with vim-plug
 1. Zsh (with pure-prompt and z)
 

@@ -1,0 +1,10 @@
+---
+- name: Install tmux via brew
+  homebrew:
+    name: tmux
+    state: latest
+
+- name: install reattach-to-user-namespace so tmux-yank works
+  homebrew:
+    name: reattach-to-user-namespace
+    state: latest

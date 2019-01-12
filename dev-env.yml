@@ -7,5 +7,6 @@
     - {role: bat, tags: ['bat']}
     - {role: git, tags: ['git']}
     - {role: gitk, tags: ['gitk']}
+    - {role: tmux, tags: ['tmux']}
     - {role: vim, tags: ['vim']}
     - {role: zsh, tags: ['zsh']}

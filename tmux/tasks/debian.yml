@@ -1,0 +1,10 @@
+---
+- name: Install tmux via apt
+  apt:
+    name: tmux=*
+  become: true
+
+- name: install xsel so tmux-yank works
+  apt:
+    name: xsel=*
+  become: true
