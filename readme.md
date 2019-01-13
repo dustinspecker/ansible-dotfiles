@@ -4,7 +4,17 @@
 
 [![Build Status](https://travis-ci.org/dustinspecker/ansible-dotfiles.svg?branch=master)](https://travis-ci.org/dustinspecker/ansible-dotfiles)
 
-## Usage
+## Usage (Ubuntu only)
+
+If you're comfortable piping `wget` output to `bash`, you may do the following:
+
+```bash
+wget -O - https://raw.githubusercontent.com/dustinspecker/ansible-dotfiles/master/install-ubuntu.sh | bash
+```
+
+This will install `ansible`, fetch this repository, and execute the playbook.
+
+## Manual Usage
 
 1. Install `ansible-playbook`
    - [Mac](https://hvops.com/articles/ansible-mac-osx/)
