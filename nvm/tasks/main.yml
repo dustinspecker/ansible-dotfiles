@@ -13,3 +13,14 @@
 - name: install nvm
   command: bash /tmp/nvm-install.sh
   when: not nvm.stat.exists
+
+- name: check if node is installed
+  find:
+    file_type: directory
+    pattern: 'v10.*'
+    paths: ~/.nvm/versions/node/
+  register: node_versions
+
+- name: install Node
+  command: bash -c "source ~/.nvm/nvm.sh && nvm install 10"
+  when: node_versions.matched == 0

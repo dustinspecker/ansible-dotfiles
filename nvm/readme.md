@@ -1,7 +1,7 @@
 Role Name
 =========
 
-Installs nvm.
+Installs nvm and node 10.
 
 Requirements
 ------------
