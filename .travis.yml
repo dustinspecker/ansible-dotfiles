@@ -8,6 +8,7 @@ matrix:
   - env: ROLE=bat
   - env: ROLE=git
   - env: ROLE=gitk
+  - env: ROLE=nvm
   - env: ROLE=tmux
   - env: ROLE=vim
   - env: ROLE=zsh

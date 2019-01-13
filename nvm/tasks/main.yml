@@ -1,0 +1,15 @@
+---
+- name: check if nvm installed
+  stat:
+    path: ~/.nvm/nvm.sh
+  register: nvm
+
+- name: download nvm install script to /tmp
+  get_url:
+    url: https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh
+    dest: /tmp/nvm-install.sh
+  when: not nvm.stat.exists
+
+- name: install nvm
+  command: bash /tmp/nvm-install.sh
+  when: not nvm.stat.exists
