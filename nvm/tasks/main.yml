@@ -17,10 +17,20 @@
 - name: check if node is installed
   find:
     file_type: directory
-    pattern: 'v10.*'
+    pattern: 'v10.15.0'
     paths: ~/.nvm/versions/node/
   register: node_versions
 
 - name: install Node
-  command: bash -c "source ~/.nvm/nvm.sh && nvm install 10"
+  command: bash -c "source ~/.nvm/nvm.sh && nvm install 10.15.0"
   when: node_versions.matched == 0
+
+- name: install global npm packages
+  npm:
+    global: true
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - diff-so-fancy
+  environment:
+    PATH: "{{ ansible_env.HOME}}/.nvm/versions/node/v10.15.0/bin:{{ ansible_env.PATH }}"

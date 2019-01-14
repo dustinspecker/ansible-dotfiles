@@ -16,3 +16,15 @@ def test_node_installed(host):
     test_cmd = 'source /home/ubuntu/.nvm/nvm.sh && nvm use 10'
 
     assert host.run_expect([0], '/bin/bash -c "{}"'.format(test_cmd))
+
+
+def test_npm_packages_installed(host):
+    packages = ['diff-so-fancy']
+
+    source_nvm = 'source /home/ubuntu/.nvm/nvm.sh && '
+    for package in packages:
+        npm_ls = 'npm list --depth 1 --global {}'.format(package)
+
+        test_cmd = source_nvm + npm_ls
+
+        assert host.run_expect([0], '/bin/bash -c "{}"'.format(test_cmd))
