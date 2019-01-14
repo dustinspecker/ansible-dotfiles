@@ -18,6 +18,12 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# Remove delay when switching vi modes
+# https://www.johnhawthorn.com/2012/09/vi-escape-delays/#zsh
+# 10ms for key sequences
+KEYTIMEOUT=1
+# End remove delay when switching vi modes
+
 # Keybindings
 bindkey -M vicmd "/" history-incremental-pattern-search-backward
 bindkey -M vicmd "?" history-incremental-pattern-search-forward
