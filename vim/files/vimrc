@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
