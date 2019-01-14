@@ -1,5 +1,5 @@
 ---
-- name: Add git apt repo to install latest git
+- name: Add git ppa to install latest git
   apt_repository:
     repo: ppa:git-core/ppa
     filename: git
