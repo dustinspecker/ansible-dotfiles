@@ -1,4 +1,5 @@
 ---
-- homebrew:
+- name: Install bat view brew
+  homebrew:
     name: bat
     state: latest
