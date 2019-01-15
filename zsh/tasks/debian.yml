@@ -1,5 +1,5 @@
 ---
-- name: install zsh via apt
+- name: Install zsh via apt
   apt:
     name: zsh=*
   become: true

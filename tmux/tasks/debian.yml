@@ -4,7 +4,7 @@
     name: tmux=*
   become: true
 
-- name: install xsel so tmux-yank works
+- name: Install xsel so tmux-yank works
   apt:
     name: xsel=*
   become: true

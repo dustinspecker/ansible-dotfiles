@@ -2,43 +2,43 @@
 - import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: create ~/.zfunctions directory
+- name: Create ~/.zfunctions directory
   file:
     path: ~/.zfunctions
     state: directory
 
-- name: install prompt_pure_setup zfunction
+- name: Install prompt_pure_setup zfunction
   get_url:
     url: https://raw.githubusercontent.com/sindresorhus/pure/master/pure.zsh
     dest: ~/.zfunctions/prompt_pure_setup
 
-- name: install async zfunction
+- name: Install async zfunction
   get_url:
     url: https://raw.githubusercontent.com/sindresorhus/pure/master/async.zsh
     dest: ~/.zfunctions/async
 
-- name: create ~/.zscripts directory
+- name: Create ~/.zscripts directory
   file:
     path: ~/.zscripts
     state: directory
 
-- name: install z tool
+- name: Install z tool
   get_url:
     url: https://raw.githubusercontent.com/rupa/z/master/z.sh
     dest: ~/.zscripts/z.sh
 
-- name: clone zsh-syntax-highlighting
+- name: Clone zsh-syntax-highlighting
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
     dest: ~/.zscripts/zsh-syntax-highlighting
     version: master
 
-- name: copy zshrc ~/.zshrc
+- name: Copy zshrc ~/.zshrc
   copy:
     src: zshrc
     dest: ~/.zshrc
 
-- name: change default shell to /bin/zsh
+- name: Change default shell to /bin/zsh
   command: "chsh -s /bin/zsh {{ ansible_user_id }}"
   when: ansible_user_shell != '/bin/zsh'
   become: true

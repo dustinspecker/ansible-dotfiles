@@ -1,5 +1,5 @@
 ---
-- name: install gitk via apt
+- name: Install gitk via apt
   apt:
     name: gitk=*
   become: true

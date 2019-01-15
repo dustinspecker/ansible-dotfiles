@@ -4,7 +4,7 @@
 - import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: copy .gitconfig to ~ directory
+- name: Copy .gitconfig to ~ directory
   copy:
     src: gitconfig
     dest: ~/.gitconfig

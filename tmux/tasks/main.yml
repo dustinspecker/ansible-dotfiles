@@ -4,29 +4,29 @@
 - import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: create ~/.tmux/plugins directory
+- name: Create ~/.tmux/plugins directory
   file:
     path: ~/.tmux/plugins
     state: directory
 
-- name: clone tmux package manager
+- name: Clone tmux package manager
   git:
     repo: https://github.com/tmux-plugins/tpm
     dest: ~/.tmux/plugins/tpm
     version: master
 
-- name: copy .tmux.conf to ~ directory
+- name: Copy .tmux.conf to ~ directory
   copy:
     src: tmux.conf
     dest: ~/.tmux.conf
 
-- name: check if plugins installed
+- name: Check if plugins installed
   find:
     file_type: directory
     paths: ~/.tmux/plugins/
   register: plugins_installed
 
-- name: install tmux plugins
+- name: Install tmux plugins
   command: ~/.tmux/plugins/tpm/bin/install_plugins
   environment:
     TMUX_PLUGIN_MANAGER_PATH: ~/.tmux/plugins/
