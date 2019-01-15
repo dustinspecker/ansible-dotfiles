@@ -6,5 +6,5 @@
 
 - name: Copy .gitconfig to ~ directory
   copy:
-    src: gitconfig
     dest: ~/.gitconfig
+    src: gitconfig

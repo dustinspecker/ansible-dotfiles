@@ -6,8 +6,8 @@
 
 - name: Download nvm install script to /tmp
   get_url:
-    url: https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh
     dest: /tmp/nvm-install.sh
+    url: https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh
   when: not nvm.stat.exists
 
 - name: Install nvm
@@ -17,8 +17,8 @@
 - name: Check if node is installed
   find:
     file_type: directory
-    pattern: 'v10.15.0'
     paths: ~/.nvm/versions/node/
+    pattern: 'v10.15.0'
   register: node_versions
 
 - name: Install Node

@@ -1,8 +1,8 @@
 ---
 - name: Add vim apt repo to install latest vim
   apt_repository:
-    repo: ppa:jonathonf/vim
     filename: vim
+    repo: ppa:jonathonf/vim
   become: true
 
 - name: Install vim via apt

@@ -1,8 +1,8 @@
 ---
 - name: Add git ppa to install latest git
   apt_repository:
-    repo: ppa:git-core/ppa
     filename: git
+    repo: ppa:git-core/ppa
   become: true
 
 - name: Install git via apt

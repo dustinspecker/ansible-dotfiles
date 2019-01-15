@@ -9,13 +9,13 @@
 
 - name: Install prompt_pure_setup zfunction
   get_url:
-    url: https://raw.githubusercontent.com/sindresorhus/pure/master/pure.zsh
     dest: ~/.zfunctions/prompt_pure_setup
+    url: https://raw.githubusercontent.com/sindresorhus/pure/master/pure.zsh
 
 - name: Install async zfunction
   get_url:
-    url: https://raw.githubusercontent.com/sindresorhus/pure/master/async.zsh
     dest: ~/.zfunctions/async
+    url: https://raw.githubusercontent.com/sindresorhus/pure/master/async.zsh
 
 - name: Create ~/.zscripts directory
   file:
@@ -24,21 +24,21 @@
 
 - name: Install z tool
   get_url:
-    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
     dest: ~/.zscripts/z.sh
+    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
 
 - name: Clone zsh-syntax-highlighting
   git:
-    repo: https://github.com/zsh-users/zsh-syntax-highlighting
     dest: ~/.zscripts/zsh-syntax-highlighting
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting
     version: master
 
 - name: Copy zshrc ~/.zshrc
   copy:
-    src: zshrc
     dest: ~/.zshrc
+    src: zshrc
 
 - name: Change default shell to /bin/zsh
   command: "chsh -s /bin/zsh {{ ansible_user_id }}"
-  when: ansible_user_shell != '/bin/zsh'
   become: true
+  when: ansible_user_shell != '/bin/zsh'

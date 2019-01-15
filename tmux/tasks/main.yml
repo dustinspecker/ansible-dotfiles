@@ -11,14 +11,14 @@
 
 - name: Clone tmux package manager
   git:
-    repo: https://github.com/tmux-plugins/tpm
     dest: ~/.tmux/plugins/tpm
+    repo: https://github.com/tmux-plugins/tpm
     version: master
 
 - name: Copy .tmux.conf to ~ directory
   copy:
-    src: tmux.conf
     dest: ~/.tmux.conf
+    src: tmux.conf
 
 - name: Check if plugins installed
   find:
