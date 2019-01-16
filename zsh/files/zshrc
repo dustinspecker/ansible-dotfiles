@@ -29,6 +29,12 @@ bindkey -M vicmd "/" history-incremental-pattern-search-backward
 bindkey -M vicmd "?" history-incremental-pattern-search-forward
 # End of keybindings
 
+# Aliases
+if type hub > /dev/null; then
+  eval "$(hub alias -s)"
+fi
+# End aliases
+
 # Setup pure prompt
 autoload -U promptinit
 promptinit
