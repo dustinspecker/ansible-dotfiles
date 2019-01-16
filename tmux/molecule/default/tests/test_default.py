@@ -7,7 +7,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_tmux_installed(host):
-    assert host.package('tmux').is_installed
+    assert host.check_output('tmux -V') == 'tmux 2.8'
+
+
+def test_tmp_tmux_cleaned_up(host):
+    assert not host.file('/tmp/tmux-2.8').exists
 
 
 def test_xsel_installed(host):

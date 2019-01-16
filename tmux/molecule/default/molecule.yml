@@ -9,6 +9,9 @@ platforms:
   - name: instance
     image: ubuntu
     image_version: latest
+  - name: instance-xenial
+    image: ubuntu
+    image_version: xenial
 provisioner:
   name: ansible
   lint:

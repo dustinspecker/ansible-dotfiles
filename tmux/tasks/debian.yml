@@ -1,8 +1,46 @@
 ---
-- name: Install tmux via apt
+- name: Install tmux build deps via apt
   apt:
-    name: tmux=*
+    name:
+      - libevent-dev
+      - libncurses-dev
+      - pkg-config
   become: true
+
+- name: check if tmux installed
+  stat:
+    path: /usr/local/bin/tmux
+  register: tmux
+
+- name: Download tmux 2.8 to /tmp/tmux
+  unarchive:
+    dest: /tmp
+    remote_src: true
+    src: https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz
+  when: tmux.stat.exists == false
+
+- name: Run /tmp/tmux-2.8/configure
+  command: sh ./configure
+  args:
+    chdir: /tmp/tmux-2.8
+  when: tmux.stat.exists == false
+
+- name: Run make in /tmp/tmux-2.8
+  make:
+    chdir: /tmp/tmux-2.8
+  when: tmux.stat.exists == false
+
+- name: Run make install to install tmux
+  make:
+    chdir: /tmp/tmux-2.8
+    target: install
+  become: true
+  when: tmux.stat.exists == false
+
+- name: Cleanup /tmp/tmux-2.8
+  file:
+    path: /tmp/tmux-2.8/
+    state: absent
 
 - name: Install xsel so tmux-yank works
   apt:
