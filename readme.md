@@ -35,7 +35,7 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 
 ## How to Create New Roles
 
-1. Scaffold via `molecule init -r ROLE_NAME`
+1. Scaffold via `molecule init role -r ROLE_NAME`
 
 ## How to Develop Roles
 
