@@ -28,6 +28,7 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 1. Bat
 1. Git
 1. Gitk
+1. hub
 1. nvm
 1. Tmux with (tmux package manager)
 1. Vim with vim-plug

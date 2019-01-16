@@ -1,0 +1,5 @@
+---
+- name: Install hub via brew
+  homebrew:
+    name: hub
+    state: latest
