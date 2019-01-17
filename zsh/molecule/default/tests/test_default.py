@@ -50,3 +50,7 @@ def test_zsh_incremental_search_pattern_bound(host):
 
 def test_zsh_z_tool_sourced(host):
     assert host.run_expect([0], '/bin/zsh -i -c "z --help"')
+
+
+def test_zsh_hub_completions_setup(host):
+    assert host.file('/home/ubuntu/.zcompletions/_hub').exists

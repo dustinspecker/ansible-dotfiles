@@ -44,3 +44,13 @@
   command: "chsh -s /bin/zsh {{ ansible_user_id }}"
   become: true
   when: ansible_user_shell != '/bin/zsh'
+
+- name: Make .zcompletions directory
+  file:
+    path: ~/.zcompletions
+    state: directory
+
+- name: Download hub zsh completions
+  get_url:
+    dest: ~/.zcompletions/_hub
+    url: https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion

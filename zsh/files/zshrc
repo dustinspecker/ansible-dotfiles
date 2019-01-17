@@ -1,4 +1,4 @@
-fpath=( "$HOME/.zfunctions" $fpath )
+fpath=( "$HOME/.zcompletions" "$HOME/.zfunctions" $fpath )
 
 # The following lines were added by compinstall
 
