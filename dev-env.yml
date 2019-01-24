@@ -9,6 +9,7 @@
     - {role: gitk, tags: ['gitk']}
     - {role: hub, tags: ['hub']}
     - {role: nvm, tags: ['nvm']}
+    - {role: packages-system, tags: ['packages-system']}
     - {role: tmux, tags: ['tmux']}
     - {role: vim, tags: ['vim']}
     - {role: zsh, tags: ['zsh']}

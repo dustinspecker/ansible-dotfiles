@@ -1,0 +1,7 @@
+---
+- name: Install packages via brew
+  homebrew:
+    name: hub
+    state: latest
+  with_items:
+    - the_silver_searcher

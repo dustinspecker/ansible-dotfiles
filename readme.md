@@ -30,6 +30,8 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 1. Gitk
 1. hub
 1. nvm
+1. packages-system
+   - silversearcher-ag
 1. Tmux with (tmux package manager)
 1. Vim with vim-plug
 1. Zsh (with pure-prompt and z)

@@ -10,6 +10,7 @@ matrix:
   - env: ROLE=gitk
   - env: ROLE=hub
   - env: ROLE=nvm
+  - env: ROLE=packages-system
   - env: ROLE=tmux
   - env: ROLE=vim
   - env: ROLE=zsh

@@ -1,0 +1,6 @@
+---
+- name: Install packages via apt
+  apt:
+    name:
+      - silversearcher-ag
+  become: true
