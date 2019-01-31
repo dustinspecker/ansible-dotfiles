@@ -25,6 +25,7 @@
   cp = cherry-pick
   cpc = cherry-pick --continue
   dc = diff --cached
+  f = fetch
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   p = push -u origin HEAD
   pg = push origin HEAD:refs/for/master
