@@ -30,7 +30,7 @@ bindkey -M vicmd "?" history-incremental-pattern-search-forward
 # End of keybindings
 
 # Aliases
-if type hub > /dev/null; then
+if [ $commands[hub] ]; then
   eval "$(hub alias -s)"
 fi
 # End aliases
