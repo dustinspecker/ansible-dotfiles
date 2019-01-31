@@ -1,59 +1,59 @@
 [branch]
-	autosetuprebase = always
+  autosetuprebase = always
 [color]
-	ui = auto
+  ui = auto
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [user]
-	email = DustinSpecker@DustinSpecker.com
-	name = Dustin Specker
+  email = DustinSpecker@DustinSpecker.com
+  name = Dustin Specker
 [push]
-	default = simple
+  default = simple
 [alias]
-	amc = am --continue
-	ap = add -p
-	bd = branch -d
-	branches = branch -a
-	c = commit
-	ca = commit --amend
-	cf = commit --fixup
-	ci = commit
-	cia = commit --amend --no-edit
-	cm = commit -m
-	co = checkout
-	cop = checkout -p
-	cp = cherry-pick
-	cpc = cherry-pick --continue
-	dc = diff --cached
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-	p = push -u origin HEAD
-	pg = push origin HEAD:refs/for/master
-	rc = rebase --continue
-	remotes = remote -v
-	rhu = !sh -c 'git fetch && git reset --hard @{upstream}'
-	ri = rebase --interactive
-	ro = !sh -c 'git rebase --onto $1 $2 $(git rev-parse --abbrev-ref HEAD)' -
-	root = rev-parse --show-toplevel
-	sl = stash list
-	sp = stash pop
-	ss = stash
-	st = status -sb
-	tags = tag -l
-	watch = !watch -c git lg --color
+  amc = am --continue
+  ap = add -p
+  bd = branch -d
+  branches = branch -a
+  c = commit
+  ca = commit --amend
+  cf = commit --fixup
+  ci = commit
+  cia = commit --amend --no-edit
+  cm = commit -m
+  co = checkout
+  cop = checkout -p
+  cp = cherry-pick
+  cpc = cherry-pick --continue
+  dc = diff --cached
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  p = push -u origin HEAD
+  pg = push origin HEAD:refs/for/master
+  rc = rebase --continue
+  remotes = remote -v
+  rhu = !sh -c 'git fetch && git reset --hard @{upstream}'
+  ri = rebase --interactive
+  ro = !sh -c 'git rebase --onto $1 $2 $(git rev-parse --abbrev-ref HEAD)' -
+  root = rev-parse --show-toplevel
+  sl = stash list
+  sp = stash pop
+  ss = stash
+  st = status -sb
+  tags = tag -l
+  watch = !watch -c git lg --color
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [diff]
-	algorithm = patience
-	compactionHeuristic = true
+  algorithm = patience
+  compactionHeuristic = true
 [pull]
-	rebase = true
+  rebase = true
 [pager]
-	diff = diff-so-fancy | less --tabs=4 -RFX
-	show = diff-so-fancy | less --tabs=4 -RFX
+  diff = diff-so-fancy | less --tabs=4 -RFX
+  show = diff-so-fancy | less --tabs=4 -RFX
 [rebase]
-	autosquash = true
-	autostash = true
+  autosquash = true
+  autostash = true
 [merge]
-	conflictstyle = diff3
+  conflictstyle = diff3
