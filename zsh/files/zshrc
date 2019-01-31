@@ -35,6 +35,16 @@ if [ $commands[hub] ]; then
 fi
 # End aliases
 
+# Manual completions setup
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
+if [ $commands[helm] ]; then
+  source <(helm completion zsh)
+fi
+# End manual completions setup
+
 # Setup pure prompt
 autoload -U promptinit
 promptinit
