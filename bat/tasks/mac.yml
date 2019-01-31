@@ -1,5 +1,5 @@
 ---
-- name: Install bat view brew
+- name: Install bat via brew
   homebrew:
     name: bat
     state: latest
