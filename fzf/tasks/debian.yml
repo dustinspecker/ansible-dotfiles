@@ -1,0 +1,13 @@
+---
+- name: Check if fzf installed
+  stat:
+    path: /usr/local/bin/fzf
+  register: fzf
+
+- name: Download and extract fzf 0.17.5 to /usr/local/bin/fzf
+  unarchive:
+    dest: /usr/local/bin
+    remote_src: true
+    src: https://github.com/junegunn/fzf-bin/releases/download/0.17.5/fzf-0.17.5-linux_amd64.tgz
+  become: true
+  when: fzf.stat.exists == false

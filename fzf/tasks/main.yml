@@ -1,0 +1,20 @@
+---
+- import_tasks: mac.yml
+  when: ansible_os_family == 'Darwin'
+- import_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Make .fzf directory
+  file:
+    path: ~/.fzf
+    state: directory
+
+- name: Download zsh completion
+  get_url:
+    dest: ~/.fzf/completion.zsh
+    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
+
+- name: Download zsh keyb-bindings
+  get_url:
+    dest: ~/.fzf/key-bindings.zsh
+    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
