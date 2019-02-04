@@ -6,6 +6,7 @@ services:
 matrix:
   include:
   - env: ROLE=bat
+  - env: ROLE=fzf
   - env: ROLE=git
   - env: ROLE=gitk
   - env: ROLE=hub
