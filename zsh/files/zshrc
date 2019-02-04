@@ -45,6 +45,17 @@ if [ $commands[helm] ]; then
 fi
 # End manual completions setup
 
+# Configure fzf
+[ -f ~/.fzf/completion.zsh ] && source ~/.fzf/completion.zsh
+
+[ -f ~/.fzf/key-bindings.zsh ] && source ~/.fzf/key-bindings.zsh
+
+export FZF_DEFAULT_COMMAND="fd --type file --color always"
+
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--ansi --preview '[[ -f {} ]] && (bat --color always {} || cat {})'"
+# End configure fzf
+
 # Setup pure prompt
 autoload -U promptinit
 promptinit
