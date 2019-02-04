@@ -5,6 +5,7 @@
   hosts: all
   roles:
     - {role: bat, tags: ['bat']}
+    - {role: fd, tags: ['fd']}
     - {role: fzf, tags: ['fzf']}
     - {role: git, tags: ['git']}
     - {role: gitk, tags: ['gitk']}
