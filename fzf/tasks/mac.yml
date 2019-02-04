@@ -1,5 +1,5 @@
 ---
-- name: Install fzf via brew
+- name: Install gnu-tar via brew
   homebrew:
-    name: fzf
+    name: gnu-tar
     state: latest

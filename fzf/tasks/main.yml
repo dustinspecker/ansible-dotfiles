@@ -1,20 +1,15 @@
 ---
 - import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
-- import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
 
-- name: Make .fzf directory
-  file:
-    path: ~/.fzf
-    state: directory
+- name: Clone fzf repository
+  git:
+    dest: ~/.fzf
+    repo: https://github.com/junegunn/fzf
+    version: master
 
-- name: Download zsh completion
-  get_url:
-    dest: ~/.fzf/completion.zsh
-    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
-
-- name: Download zsh keyb-bindings
-  get_url:
-    dest: ~/.fzf/key-bindings.zsh
-    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
+- name: Download and extract fzf 0.17.5 to ~/.fzf/bin/fzf
+  unarchive:
+    dest: ~/.fzf/bin/
+    remote_src: true
+    src: https://github.com/junegunn/fzf-bin/releases/download/0.17.5/fzf-0.17.5-{{ ansible_system }}_amd64.tgz
