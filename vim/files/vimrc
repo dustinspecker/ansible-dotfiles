@@ -11,8 +11,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'elzr/vim-json'
 Plug 'jtratner/vim-flavored-markdown'
+Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-fakeclip'
-Plug 'kien/ctrlp.vim'
 Plug 'mxw/vim-jsx'
 Plug 'othree/yajs'
 Plug 'tpope/vim-repeat'
@@ -140,9 +141,9 @@ noremap <leader>d :bp\|bd #<CR>
 set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ctrlp.vim
+" => fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|tmp\|git\'
+nmap <C-p> :FZF<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-buftabline
