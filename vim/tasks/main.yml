@@ -8,6 +8,8 @@
   copy:
     dest: ~/.vimrc
     src: vimrc
+  notify:
+    - Install vim plugins
 
 - name: Create ~/.vim/autoload directory
   file:
@@ -18,8 +20,3 @@
   get_url:
     dest: ~/.vim/autoload/plug.vim
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-- name: Install vim plugins
-  command: vim +PlugInstall +qa
-  args:
-    creates: ~/.vim/plugged

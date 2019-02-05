@@ -1,2 +1,5 @@
 ---
-# handlers file for vim
+- name: Install vim plugins
+  command: vim +PlugInstall +qa
+  args:
+    creates: ~/.vim/plugged
