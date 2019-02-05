@@ -19,15 +19,5 @@
   copy:
     dest: ~/.tmux.conf
     src: tmux.conf
-
-- name: Check if plugins installed
-  find:
-    file_type: directory
-    paths: ~/.tmux/plugins/
-  register: plugins_installed
-
-- name: Install tmux plugins
-  command: ~/.tmux/plugins/tpm/bin/install_plugins
-  environment:
-    TMUX_PLUGIN_MANAGER_PATH: ~/.tmux/plugins/
-  when: plugins_installed.matched == 1
+  notify:
+    - Install tmux plugins

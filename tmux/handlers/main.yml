@@ -1,2 +1,5 @@
 ---
-# handlers file for tmux
+- name: Install tmux plugins
+  command: ~/.tmux/plugins/tpm/bin/install_plugins
+  environment:
+    TMUX_PLUGIN_MANAGER_PATH: ~/.tmux/plugins/
