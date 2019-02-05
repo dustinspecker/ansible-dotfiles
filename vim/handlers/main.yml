@@ -1,5 +1,5 @@
 ---
 - name: Install vim plugins
-  command: vim +PlugInstall +qa
+  command: vim +PlugInstall +PlugClean +qa
   args:
     creates: ~/.vim/plugged
