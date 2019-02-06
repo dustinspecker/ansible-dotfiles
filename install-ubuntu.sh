@@ -51,6 +51,6 @@ else
 fi
 
 # execute playbook to setup development environment
-ansible-playbook -i hosts dev-env.yml --ask-become-pass
+ansible-playbook -i hosts dev-env.yml --ask-become-pass "$@"
 
 echo 'Log out and back in for shell changes to take effect'
