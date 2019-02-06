@@ -1,11 +1,7 @@
 ---
-- name: Check if hub installed
-  stat:
-    path: /usr/local/bin/hub
-  register: hub
-
 - name: Download and extract hub 2.7 to /usr/local/bin/hub
   unarchive:
+    creates: /usr/local/bin/hub
     dest: /usr/local/bin
     extra_opts:
       - '--strip-components=2'
@@ -13,4 +9,3 @@
     remote_src: true
     src: https://github.com/github/hub/releases/download/v2.7.0/hub-linux-amd64-2.7.0.tgz
   become: true
-  when: hub.stat.exists == false
