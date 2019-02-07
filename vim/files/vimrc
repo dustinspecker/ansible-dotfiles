@@ -142,6 +142,15 @@ noremap <leader>d :bp\|bd #<CR>
 " Always show the status line
 set laststatus=2
 
+" https://gist.github.com/TaurusOlson/5626884
+set statusline =
+set statusline +=[%n]
+set statusline +=%f\ %h%m%r%w
+set statusline +=%y%w
+set statusline +=%{FugitiveStatusline()}
+set statusline +=%=%-10L
+set statusline +=%=%-14.(%l,%c%V%)\ %P
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
