@@ -16,6 +16,7 @@
   branches = branch -a
   c = commit
   ca = commit --amend
+  cco = commit -C ORIG_HEAD
   cf = commit --fixup
   ci = commit
   cia = commit --amend --no-edit
