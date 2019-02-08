@@ -33,6 +33,10 @@ bindkey -M vicmd "?" history-incremental-pattern-search-forward
 if [ $commands[hub] ]; then
   eval "$(hub alias -s)"
 fi
+
+if [ $commands[bat] ]; then
+  alias cat=bat
+fi
 # End aliases
 
 # Manual completions setup
