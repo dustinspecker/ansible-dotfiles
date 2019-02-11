@@ -32,7 +32,7 @@
   rc = rebase --continue
   remotes = remote -v
   rhu = !sh -c 'git fetch && git reset --hard @{upstream}'
-  ri = rebase --interactive
+  ri = !sh -c 'git rebase --interactive ${1:-origin/master}' -
   ro = !sh -c 'git rebase --onto $1 $2 $(git rev-parse --abbrev-ref HEAD)' -
   rom = !sh -c 'git ro ${1:-origin/master} $(git merge-base ${1:-origin/master} HEAD)' -
   root = rev-parse --show-toplevel
