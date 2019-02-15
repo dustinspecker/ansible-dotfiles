@@ -6,6 +6,7 @@
 
 - name: Copy .vimrc to ~ directory
   copy:
+    backup: true
     dest: ~/.vimrc
     src: vimrc
   notify:

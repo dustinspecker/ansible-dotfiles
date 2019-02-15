@@ -17,6 +17,7 @@
 
 - name: Copy .tmux.conf to ~ directory
   copy:
+    backup: true
     dest: ~/.tmux.conf
     src: tmux.conf
   notify:

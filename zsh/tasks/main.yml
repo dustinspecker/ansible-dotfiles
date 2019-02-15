@@ -37,6 +37,7 @@
 
 - name: Copy zshrc ~/.zshrc
   copy:
+    backup: true
     dest: ~/.zshrc
     src: zshrc
 
