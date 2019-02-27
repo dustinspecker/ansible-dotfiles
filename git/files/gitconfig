@@ -49,6 +49,7 @@
 [diff]
   algorithm = patience
   compactionHeuristic = true
+  tool = vimdiff
 [pull]
   rebase = true
 [pager]
@@ -59,3 +60,4 @@
   autostash = true
 [merge]
   conflictstyle = diff3
+  tool = vimdiff
