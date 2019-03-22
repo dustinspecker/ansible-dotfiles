@@ -156,6 +156,11 @@ set statusline +=%{FugitiveStatusline()}
 set statusline +=%=%-10L
 set statusline +=%=%-14.(%l,%c%V%)\ %P
 
+""""""""""""""""""""""""""""""
+" => Syntax coloring
+""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead *.Jenkinsfile set syntax=groovy
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
