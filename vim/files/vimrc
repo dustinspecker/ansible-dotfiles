@@ -136,6 +136,11 @@ nnoremap <leader>n :bnext<CR>
 
 noremap <leader>d :bp\|bd #<CR>
 
+nnoremap <leader><leader>N :cprevious<CR>
+nnoremap <leader><leader>n :cnext<CR>
+nnoremap <leader><leader>c :cclose<CR>
+nnoremap <leader><leader>o :copen<CR>
+
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
