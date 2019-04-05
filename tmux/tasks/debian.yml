@@ -17,25 +17,25 @@
     dest: /tmp
     remote_src: true
     src: https://github.com/tmux/tmux/releases/download/2.8/tmux-2.8.tar.gz
-  when: tmux.stat.exists == false
+  when: not tmux.stat.exists
 
 - name: Run /tmp/tmux-2.8/configure
   command: sh ./configure
   args:
     chdir: /tmp/tmux-2.8
-  when: tmux.stat.exists == false
+  when: not tmux.stat.exists
 
 - name: Run make in /tmp/tmux-2.8
   make:
     chdir: /tmp/tmux-2.8
-  when: tmux.stat.exists == false
+  when: not tmux.stat.exists
 
 - name: Run make install to install tmux
   make:
     chdir: /tmp/tmux-2.8
     target: install
   become: true
-  when: tmux.stat.exists == false
+  when: not tmux.stat.exists
 
 - name: Cleanup /tmp/tmux-2.8
   file:

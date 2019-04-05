@@ -33,4 +33,4 @@
   with_items:
     - diff-so-fancy
   environment:
-    PATH: "{{ ansible_env.HOME}}/.nvm/versions/node/v10.15.0/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ ansible_env.HOME }}/.nvm/versions/node/v10.15.0/bin:{{ ansible_env.PATH }}"
