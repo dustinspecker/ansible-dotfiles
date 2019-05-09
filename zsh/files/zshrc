@@ -77,6 +77,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # End setup nvm
 
+# Add git-gerrit to PATH
+export PATH=$PATH:~/git-gerrit
+# End add git-gerrit to PATH
+
 # Setup zsh-syntax-highlighting
 # This must be last in zshrc
 source ~/.zscripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
