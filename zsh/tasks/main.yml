@@ -35,6 +35,12 @@
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
     version: master
 
+- name: Clone zsh-autosuggestions
+  git:
+    dest: ~/.zscripts/zsh-autosuggestions
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    version: master
+
 - name: Copy zshrc ~/.zshrc
   copy:
     backup: true

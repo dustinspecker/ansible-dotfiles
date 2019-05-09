@@ -34,6 +34,17 @@ def test_zsh_syntax_highlighting_enabled(host):
     assert ('no such file' not in zsh_source.stderr)
 
 
+def test_zsh_autosuggestion_enabled(host):
+    zsh_source = host.run('/bin/zsh -i -o SOURCE_TRACE')
+
+    expected_file_path = (
+        '/home/ubuntu/.zscripts/zsh-autosuggestions/zsh-autosuggestions.zsh'
+    )
+
+    assert (expected_file_path in zsh_source.stderr)
+    assert ('no such file' not in zsh_source.stderr)
+
+
 def test_zsh_incremental_search_pattern_bound(host):
     backward_bind = (
         '/bin/zsh -i -c "bindkey -a | '
