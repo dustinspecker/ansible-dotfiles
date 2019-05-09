@@ -16,3 +16,7 @@ def test_git_installed(host):
 
 def test_gitconfig_copied(host):
     assert host.file('/home/ubuntu/.gitconfig').exists
+
+
+def test_git_gerrit_cloned(host):
+    assert host.file('/home/ubuntu/git-gerrit/git-gerrit').exists

@@ -9,3 +9,9 @@
     backup: true
     dest: ~/.gitconfig
     src: gitconfig
+
+- name: Clone git-gerrit
+  git:
+    dest: ~/git-gerrit
+    repo: https://github.com/dustinspecker/git-gerrit
+    version: master
