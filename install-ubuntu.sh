@@ -30,7 +30,7 @@ git fetch
 
 # do not exit if following commands return non-zero exit code
 # want to store and use these exit codes
-set +e 
+set +e
 
 # only update local git if no local changes uncommitted
 (git --no-pager diff --quiet --exit-code)
