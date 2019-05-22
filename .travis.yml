@@ -20,6 +20,6 @@ before_install:
   - sudo apt-get -qq update
   - cd ./$ROLE
 install:
-  - pip install molecule docker
+  - pip install git+https://github.com/ansible/molecule docker flake8
 script:
   - molecule test
