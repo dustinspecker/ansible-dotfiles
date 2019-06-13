@@ -4,4 +4,5 @@
     name: hub
     state: latest
   with_items:
+    - jq
     - the_silver_searcher
