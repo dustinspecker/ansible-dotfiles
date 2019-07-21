@@ -23,26 +23,32 @@ def test_zsh_pure_prompt_is_selected(host):
 
 
 def test_zsh_syntax_highlighting_enabled(host):
-    zsh_source = host.run('/bin/zsh -i -o SOURCE_TRACE')
+    zsh_source = host.ansible(
+        'raw',
+        '/bin/zsh -i -o SOURCE_TRACE',
+        check=False)
 
     expected_file_path = (
         '/home/ubuntu/.zscripts/zsh-syntax-highlighting/'
         'zsh-syntax-highlighting.zsh'
     )
 
-    assert (expected_file_path in zsh_source.stderr)
-    assert ('no such file' not in zsh_source.stderr)
+    assert (expected_file_path in ''.join(zsh_source['stderr_lines']))
+    assert ('no such file' not in ''.join(zsh_source['stderr_lines']))
 
 
 def test_zsh_autosuggestion_enabled(host):
-    zsh_source = host.run('/bin/zsh -i -o SOURCE_TRACE')
+    zsh_source = host.ansible(
+        'raw',
+        '/bin/zsh -i -o SOURCE_TRACE',
+        check=False)
 
     expected_file_path = (
         '/home/ubuntu/.zscripts/zsh-autosuggestions/zsh-autosuggestions.zsh'
     )
 
-    assert (expected_file_path in zsh_source.stderr)
-    assert ('no such file' not in zsh_source.stderr)
+    assert (expected_file_path in ''.join(zsh_source['stderr_lines']))
+    assert ('no such file' not in ''.join(zsh_source['stderr_lines']))
 
 
 def test_zsh_incremental_search_pattern_bound(host):
