@@ -160,7 +160,7 @@ set statusline +=%=%-14.(%l,%c%V%)\ %P
 """"""""""""""""""""""""""""""
 " => Syntax coloring
 """"""""""""""""""""""""""""""
-autocmd BufNewFile,BufRead *.Jenkinsfile set syntax=groovy
+autocmd BufNewFile,BufRead *Jenkinsfile set syntax=groovy
 
 " show whitespace characters
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
