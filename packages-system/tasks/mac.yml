@@ -1,7 +1,7 @@
 ---
 - name: Install packages via brew
   homebrew:
-    name: hub
+    name: "{{ item }}"
     state: latest
   with_items:
     - jq
