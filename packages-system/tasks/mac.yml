@@ -1,8 +1,7 @@
 ---
 - name: Install packages via brew
   homebrew:
-    name: "{{ item }}"
+    name:
+      - jq
+      - the_silver_searcher
     state: latest
-  with_items:
-    - jq
-    - the_silver_searcher
