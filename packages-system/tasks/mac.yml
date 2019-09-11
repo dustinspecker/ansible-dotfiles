@@ -2,6 +2,7 @@
 - name: Install packages via brew
   homebrew:
     name:
+      - bat
       - jq
       - the_silver_searcher
     state: latest

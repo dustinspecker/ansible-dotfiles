@@ -33,6 +33,7 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 1. hub
 1. nvm
 1. packages-system
+   - bat
    - jq
    - silversearcher-ag
 1. Tmux with (tmux package manager)

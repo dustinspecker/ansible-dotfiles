@@ -7,5 +7,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_packages_are_installed(host):
+    assert host.package('bat').is_installed
     assert host.package('jq').is_installed
     assert host.package('silversearcher-ag').is_installed
