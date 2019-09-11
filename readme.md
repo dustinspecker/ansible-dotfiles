@@ -25,7 +25,6 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 
 ## Sets Up
 
-1. Bat
 1. fd
 1. fzf
 1. Git
