@@ -7,7 +7,6 @@
     - {role: fd, tags: ['fd']}
     - {role: fzf, tags: ['fzf']}
     - {role: git, tags: ['git']}
-    - {role: gitk, tags: ['gitk']}
     - {role: hub, tags: ['hub']}
     - {role: nvm, tags: ['nvm']}
     - {role: packages-system, tags: ['packages-system']}

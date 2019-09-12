@@ -8,7 +8,6 @@ matrix:
   - env: ROLE=fd
   - env: ROLE=fzf
   - env: ROLE=git
-  - env: ROLE=gitk
   - env: ROLE=hub
   - env: ROLE=nvm
   - env: ROLE=packages-system
