@@ -7,5 +7,5 @@
 
 - name: Install git via apt
   apt:
-    name: git=*
+    name: git
   become: true
