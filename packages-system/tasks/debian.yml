@@ -15,7 +15,7 @@
 
 - name: Install fd via .deb from github release
   vars:
-    FD_VERSION: 7.2.0
+    FD_VERSION: 7.4.0
   apt:
     deb: https://github.com/sharkdp/fd/releases/download/v{{ FD_VERSION }}/fd_{{ FD_VERSION }}_amd64.deb
   become: true
