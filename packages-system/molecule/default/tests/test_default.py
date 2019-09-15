@@ -9,6 +9,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_packages_are_installed(host):
     packages = [
         {'name': 'bat', 'version': '0.12.1'},
+        {'name': 'fd', 'version': '7.2.0'},
         'jq',
         'silversearcher-ag'
     ]

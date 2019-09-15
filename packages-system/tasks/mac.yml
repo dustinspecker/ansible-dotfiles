@@ -3,6 +3,7 @@
   homebrew:
     name:
       - bat
+      - fd
       - jq
       - the_silver_searcher
     state: latest
