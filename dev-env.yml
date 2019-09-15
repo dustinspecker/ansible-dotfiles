@@ -4,7 +4,6 @@
 - name: set up dev env
   hosts: all
   roles:
-    - {role: fd, tags: ['fd']}
     - {role: fzf, tags: ['fzf']}
     - {role: git, tags: ['git']}
     - {role: hub, tags: ['hub']}

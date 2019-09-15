@@ -5,7 +5,6 @@ services:
   - docker
 matrix:
   include:
-  - env: ROLE=fd
   - env: ROLE=fzf
   - env: ROLE=git
   - env: ROLE=hub

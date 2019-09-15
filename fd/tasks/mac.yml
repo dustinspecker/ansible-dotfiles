@@ -1,5 +1,0 @@
----
-- name: Install fd via brew
-  homebrew:
-    name: fd
-    state: latest
