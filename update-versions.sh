@@ -19,7 +19,7 @@ update_version() {
   local upper_repo_name
   upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
 
-  latest_version=$(http "https://api.github.com/repos/$github_org/$repo_name/releases" | jq -crM 'first(.[]) | .tag_name' | sed 's/^v//')
+  latest_version=$(http "https://api.github.com/repos/$github_org/$repo_name/tags" | jq -crM 'first(.[]) | .name' | sed 's/^v//')
 
   sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" "$task_file"
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
