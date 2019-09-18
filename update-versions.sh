@@ -19,8 +19,8 @@ update_version() {
 
   latest_version=$(http "https://api.github.com/repos/$github_org/$repo_name/releases" | jq -crM 'first(.[]) | .tag_name' | sed 's/^v//')
 
-  sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/" packages-system/tasks/debian.yml
-  sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/" packages-system/molecule/default/tests/test_default.py
+  sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" packages-system/tasks/debian.yml
+  sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" packages-system/molecule/default/tests/test_default.py
 }
 
 update_version "sharkdp" "bat"
