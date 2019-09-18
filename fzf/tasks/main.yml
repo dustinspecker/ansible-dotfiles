@@ -6,10 +6,14 @@
   git:
     dest: ~/.fzf
     repo: https://github.com/junegunn/fzf
-    version: 0.17.5
+    version: "{{ FZF_VERSION }}"
+  vars:
+    FZF_VERSION: 0.17.5
 
-- name: Download and extract fzf 0.17.5 to ~/.fzf/bin/fzf
+- name: Download and extract fzf to ~/.fzf/bin/fzf
   unarchive:
     dest: ~/.fzf/bin/
     remote_src: true
-    src: https://github.com/junegunn/fzf-bin/releases/download/0.17.5/fzf-0.17.5-{{ ansible_system }}_amd64.tgz
+    src: https://github.com/junegunn/fzf-bin/releases/download/{{ FZF_VERSION }}/fzf-{{ FZF_VERSION }}-{{ ansible_system }}_amd64.tgz
+  vars:
+    FZF_VERSION: 0.17.5

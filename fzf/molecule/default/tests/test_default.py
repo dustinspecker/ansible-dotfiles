@@ -8,7 +8,8 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 def test_fzf_cloned_and_checked_out_tag(host):
     cmd = 'git -C ~/.fzf describe --exact-match HEAD'
-    assert host.check_output(cmd) == '0.17.5'
+    FZF_VERSION = '0.17.5'
+    assert host.check_output(cmd) == FZF_VERSION
 
 
 def test_fzf_installed(host):
