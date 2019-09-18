@@ -6,6 +6,11 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
+def test_fzf_cloned_and_checked_out_tag(host):
+    cmd = 'git -C ~/.fzf describe --exact-match HEAD'
+    assert host.check_output(cmd) == '0.17.5'
+
+
 def test_fzf_installed(host):
     assert host.file('/home/ubuntu/.fzf/bin/fzf').exists
 

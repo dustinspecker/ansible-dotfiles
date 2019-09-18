@@ -6,7 +6,7 @@
   git:
     dest: ~/.fzf
     repo: https://github.com/junegunn/fzf
-    version: master
+    version: 0.17.5
 
 - name: Download and extract fzf 0.17.5 to ~/.fzf/bin/fzf
   unarchive:
