@@ -162,10 +162,6 @@ set statusline +=%=%-14.(%l,%c%V%)\ %P
 """"""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead *Jenkinsfile set syntax=groovy
 
-" show whitespace characters
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-set list
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => fzf.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
