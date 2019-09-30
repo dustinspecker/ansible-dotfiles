@@ -18,8 +18,7 @@ matrix:
     - env: ROLE=zsh
 before_install:
   - sudo apt-get -qq update
-  - cd ./$ROLE
 install:
   - pip install molecule docker
 script:
-  - molecule test
+  - make test
