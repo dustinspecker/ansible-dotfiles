@@ -5,14 +5,14 @@ services:
   - docker
 matrix:
   include:
-  - env: ROLE=fzf
-  - env: ROLE=git
-  - env: ROLE=hub
-  - env: ROLE=nvm
-  - env: ROLE=packages-system
-  - env: ROLE=tmux
-  - env: ROLE=vim
-  - env: ROLE=zsh
+    - env: ROLE=fzf
+    - env: ROLE=git
+    - env: ROLE=hub
+    - env: ROLE=nvm
+    - env: ROLE=packages-system
+    - env: ROLE=tmux
+    - env: ROLE=vim
+    - env: ROLE=zsh
 before_install:
   - sudo apt-get -qq update
   - cd ./$ROLE
