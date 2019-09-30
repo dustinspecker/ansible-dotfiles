@@ -25,6 +25,6 @@ update_version() {
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
 }
 
-update_version "junegunn" "fzf" fzf/tasks/main.yml fzf/molecule/default/tests/test_default.py
+update_version "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
 update_version "sharkdp" "bat"
 update_version "sharkdp" "fd"
