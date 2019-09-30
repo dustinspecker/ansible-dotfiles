@@ -4,6 +4,7 @@ language: python
 services:
   - docker
 matrix:
+  fast_finish: true
   include:
     - env: ROLE=fzf
     - env: ROLE=git
