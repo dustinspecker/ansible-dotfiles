@@ -13,6 +13,8 @@ matrix:
     - env: ROLE=tmux
     - env: ROLE=vim
     - env: ROLE=zsh
+  allow_failures:
+    - env: ROLE=zsh
 before_install:
   - sudo apt-get -qq update
   - cd ./$ROLE
