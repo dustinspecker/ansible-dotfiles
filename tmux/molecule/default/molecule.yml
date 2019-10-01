@@ -9,9 +9,9 @@ platforms:
   - name: ubuntu-1804
     image: ubuntu
     image_version: 18.04
-  - name: instance-xenial
+  - name: ubuntu-1604
     image: ubuntu
-    image_version: xenial
+    image_version: 16.04
 provisioner:
   name: ansible
   lint:
