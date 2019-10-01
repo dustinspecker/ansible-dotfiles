@@ -9,4 +9,4 @@ $(ROLE):
 
 .PHONY: test
 test:
-	cd ./${ROLE} && molecule test
+	cd ./${ROLE} && molecule test --parallel
