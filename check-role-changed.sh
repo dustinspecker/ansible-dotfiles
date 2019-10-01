@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 if [ -z "$ROLE" ]; then
   echo "ROLE must be set" >&2
