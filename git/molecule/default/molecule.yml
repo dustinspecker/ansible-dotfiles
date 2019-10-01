@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: instance
+  - name: ubuntu-1804
     image: ubuntu
     image_version: 18.04
 provisioner:
