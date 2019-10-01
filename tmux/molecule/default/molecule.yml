@@ -8,7 +8,7 @@ lint:
 platforms:
   - name: instance
     image: ubuntu
-    image_version: latest
+    image_version: 18.04
   - name: instance-xenial
     image: ubuntu
     image_version: xenial
