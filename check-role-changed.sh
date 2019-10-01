@@ -5,4 +5,4 @@ if [ -z "$ROLE" ]; then
   exit 1
 fi
 
-git diff --name-only | grep "$ROLE"
+git diff --name-only ${TRAVIS_COMMIT_RANGE:-HEAD^} | grep "$ROLE"
