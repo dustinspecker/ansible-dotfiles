@@ -1,2 +1,3 @@
 ---
 # vars file for hub
+HUB_VERSION: 2.7.0

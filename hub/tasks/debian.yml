@@ -1,11 +1,11 @@
 ---
-- name: Download and extract hub 2.7 to /usr/local/bin/hub
+- name: Download and extract hub to /usr/local/bin/hub
   unarchive:
     creates: /usr/local/bin/hub
     dest: /usr/local/bin
     extra_opts:
       - '--strip-components=2'
-      - hub-linux-amd64-2.7.0/bin/hub
+      - hub-linux-amd64-{{ HUB_VERSION }}/bin/hub
     remote_src: true
-    src: https://github.com/github/hub/releases/download/v2.7.0/hub-linux-amd64-2.7.0.tgz
+    src: https://github.com/github/hub/releases/download/v{{ HUB_VERSION }}/hub-linux-amd64-{{ HUB_VERSION }}.tgz
   become: true
