@@ -1,5 +1,5 @@
 ---
-- name: Download and extract hub to /usr/local/bin/hub
+- name: Download and extract hub {{ HUB_VERSION }} to /usr/local/bin/hub
   unarchive:
     creates: /usr/local/bin/hub
     dest: /usr/local/bin
