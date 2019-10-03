@@ -1,2 +1,8 @@
 ---
 # handlers file for hub
+- name: Update hub version fact
+  template:
+    dest: /etc/ansible/facts.d/hub.fact
+    mode: 0755
+    src: hub.fact.j2
+  become: true

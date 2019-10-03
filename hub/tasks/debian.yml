@@ -1,7 +1,26 @@
 ---
+- name: Check if hub.fact exists
+  stat:
+    path: /etc/ansible/facts.d/hub.fact
+  register: hub_fact
+
+- name: Create /etc/ansible/facts.d/
+  file:
+    path: /etc/ansible/facts.d/
+    state: directory
+  become: true
+  when: not hub_fact.stat.exists
+
+- name: Create /etc/ansible/facts.d/hub.fact
+  file:
+    mode: 0755
+    path: /etc/ansible/facts.d/hub.fact
+    state: touch
+  become: true
+  when: not hub_fact.stat.exists
+
 - name: Download and extract hub {{ HUB_VERSION }} to /usr/local/bin/hub
   unarchive:
-    creates: /usr/local/bin/hub
     dest: /usr/local/bin
     extra_opts:
       - '--strip-components=2'
@@ -9,3 +28,5 @@
     remote_src: true
     src: https://github.com/github/hub/releases/download/v{{ HUB_VERSION }}/hub-linux-amd64-{{ HUB_VERSION }}.tgz
   become: true
+  when: INSTALLED_HUB_VERSION|default('None') != HUB_VERSION
+  notify: Update hub version fact
