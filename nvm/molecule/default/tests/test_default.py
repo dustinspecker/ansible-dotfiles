@@ -17,7 +17,7 @@ def test_nvm_installed(host):
 
 
 def test_node_installed(host):
-    test_cmd = 'source /home/ubuntu/.nvm/nvm.sh && nvm use 10'
+    test_cmd = 'source /home/ubuntu/.nvm/nvm.sh && nvm use 10.15.0'
 
     assert host.run_expect([0], '/bin/bash -c "{}"'.format(test_cmd))
 
