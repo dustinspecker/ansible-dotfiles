@@ -14,6 +14,12 @@
   command: bash /tmp/nvm-install.sh
   when: not nvm.stat.exists
 
+- name: Setup default global packages
+  copy:
+    backup: true
+    dest: ~/.nvm/default-packages
+    src: default-packages
+
 - name: Check if node is installed
   find:
     file_type: directory
@@ -24,13 +30,3 @@
 - name: Install Node
   command: bash -c "source ~/.nvm/nvm.sh && nvm install 10.15.0"
   when: node_versions.matched == 0
-
-- name: Install global npm packages
-  npm:
-    global: true
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - diff-so-fancy
-  environment:
-    PATH: "{{ ansible_env.HOME }}/.nvm/versions/node/v10.15.0/bin:{{ ansible_env.PATH }}"
