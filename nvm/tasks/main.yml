@@ -7,7 +7,7 @@
 - name: Download nvm install script to /tmp
   get_url:
     dest: /tmp/nvm-install.sh
-    url: https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh
+    url: https://raw.githubusercontent.com/creationix/nvm/v{{ NVM_VERSION }}/install.sh
   when: not nvm.stat.exists
 
 - name: Install nvm
