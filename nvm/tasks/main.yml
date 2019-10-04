@@ -24,9 +24,9 @@
   find:
     file_type: directory
     paths: ~/.nvm/versions/node/
-    pattern: 'v10.15.0'
+    pattern: 'v{{ NODE_VERSION }}'
   register: node_versions
 
 - name: Install Node
-  command: bash -c "source ~/.nvm/nvm.sh && nvm install 10.15.0"
+  command: bash -c "source ~/.nvm/nvm.sh && nvm install {{ NODE_VERSION }}"
   when: node_versions.matched == 0

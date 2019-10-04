@@ -5,6 +5,7 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
+NODE_VERSION = '10.15.0'
 NVM_VERSION = '0.34.0'
 
 
@@ -17,7 +18,8 @@ def test_nvm_installed(host):
 
 
 def test_node_installed(host):
-    test_cmd = 'source /home/ubuntu/.nvm/nvm.sh && nvm use 10.15.0'
+    test_cmd = 'source /home/ubuntu/.nvm/nvm.sh && nvm use "{}"' \
+        .format(NODE_VERSION)
 
     assert host.run_expect([0], '/bin/bash -c "{}"'.format(test_cmd))
 
