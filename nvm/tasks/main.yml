@@ -6,13 +6,17 @@
 - name: Download nvm install script to /tmp
   get_url:
     dest: /tmp/nvm-install.sh
-    force: true
     url: https://raw.githubusercontent.com/creationix/nvm/v{{ NVM_VERSION }}/install.sh
   when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
 
 - name: Install nvm {{ NVM_VERSION }}
   command: bash /tmp/nvm-install.sh
   when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
+
+- name: Cleanup /tmp/nvm-install.sh
+  file:
+    path: /tmp/nvm-install.sh
+    state: absent
 
 - name: Setup default global packages
   copy:

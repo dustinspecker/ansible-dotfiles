@@ -17,6 +17,10 @@ def test_nvm_installed(host):
     assert version == NVM_VERSION
 
 
+def test_nvm_install_deleted(host):
+    assert not host.file('/tmp/nvm-install.sh').exists
+
+
 def test_node_installed(host):
     test_cmd = 'source /home/ubuntu/.nvm/nvm.sh && nvm use "{}"' \
         .format(NODE_VERSION)
