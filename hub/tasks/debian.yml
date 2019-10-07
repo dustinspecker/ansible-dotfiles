@@ -15,14 +15,6 @@
   become: true
   when: not hub_fact.stat.exists
 
-- name: Create /etc/ansible/facts.d/hub.fact
-  file:
-    mode: 0755
-    path: /etc/ansible/facts.d/hub.fact
-    state: touch
-  become: true
-  when: not hub_fact.stat.exists
-
 - name: Download and extract hub {{ HUB_VERSION }} to /usr/local/bin/hub
   unarchive:
     dest: /usr/local/bin
