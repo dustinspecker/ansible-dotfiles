@@ -1,23 +1,24 @@
 ---
-- name: Check if nvm installed
-  stat:
-    path: ~/.nvm/nvm.sh
-  register: nvm
+- name: Previous nvm version
+  debug:
+    msg: "nvm version: {{ ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') }}"
 
 - name: Download nvm install script to /tmp
   get_url:
     dest: /tmp/nvm-install.sh
+    force: true
     url: https://raw.githubusercontent.com/creationix/nvm/v{{ NVM_VERSION }}/install.sh
-  when: not nvm.stat.exists
+  when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
 
 - name: Install nvm
   command: bash /tmp/nvm-install.sh
-  when: not nvm.stat.exists
+  when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
 
 - name: Setup default global packages
   copy:
     backup: true
     dest: ~/.nvm/default-packages
+    force: true
     src: default-packages
 
 - name: Check if node is installed
@@ -30,3 +31,20 @@
 - name: Install Node
   command: bash -c "source ~/.nvm/nvm.sh && nvm install {{ NODE_VERSION }}"
   when: node_versions.matched == 0
+
+- name: Switch default Node version
+  command: bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ NODE_VERSION }}"
+  when: node_versions.matched == 0
+
+- name: Create /etc/ansible/facts.d/
+  file:
+    path: /etc/ansible/facts.d/
+    state: directory
+  become: true
+
+- name: Create /etc/ansible/facts.d/nvm.fact
+  template:
+    dest: /etc/ansible/facts.d/nvm.fact
+    mode: 0755
+    src: nvm.fact.j2
+  become: true

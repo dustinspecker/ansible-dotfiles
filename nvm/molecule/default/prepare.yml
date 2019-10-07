@@ -1,0 +1,7 @@
+---
+- name: Prepare
+  hosts: all
+  roles:
+    - role: nvm
+      NODE_VERSION: 10.14.0
+      NVM_VERSION: 0.33.0
