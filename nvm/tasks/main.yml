@@ -10,7 +10,7 @@
     url: https://raw.githubusercontent.com/creationix/nvm/v{{ NVM_VERSION }}/install.sh
   when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
 
-- name: Install nvm
+- name: Install nvm {{ NVM_VERSION }}
   command: bash /tmp/nvm-install.sh
   when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
 
@@ -21,18 +21,18 @@
     force: true
     src: default-packages
 
-- name: Check if node is installed
+- name: Check if node {{ NODE_VERSION }} is installed
   find:
     file_type: directory
     paths: ~/.nvm/versions/node/
     pattern: 'v{{ NODE_VERSION }}'
   register: node_versions
 
-- name: Install Node
+- name: Install Node {{ NODE_VERSION }}
   command: bash -c "source ~/.nvm/nvm.sh && nvm install {{ NODE_VERSION }}"
   when: node_versions.matched == 0
 
-- name: Switch default Node version
+- name: Switch default to Node {{ NODE_VERSION }}
   command: bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ NODE_VERSION }}"
   when: node_versions.matched == 0
 
