@@ -28,5 +28,5 @@
     remote_src: true
     src: https://github.com/github/hub/releases/download/v{{ HUB_VERSION }}/hub-linux-amd64-{{ HUB_VERSION }}.tgz
   become: true
-  when: INSTALLED_HUB_VERSION|default('None') != HUB_VERSION
+  when: ansible_local.hub.INSTALLED_HUB_VERSION|default('None') != HUB_VERSION
   notify: Update hub version fact
