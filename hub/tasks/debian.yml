@@ -33,4 +33,11 @@
     src: https://github.com/github/hub/releases/download/v{{ HUB_VERSION }}/hub-linux-amd64-{{ HUB_VERSION }}.tgz
   become: true
   when: ansible_local.hub.INSTALLED_HUB_VERSION|default('None') != HUB_VERSION
-  notify: Update hub version fact
+
+- name: Update hub version fact
+  template:
+    dest: /etc/ansible/facts.d/hub.fact
+    force: true
+    mode: 0755
+    src: hub.fact.j2
+  become: true
