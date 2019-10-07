@@ -1,4 +1,8 @@
 ---
+- name: Previous Hub version
+  debug:
+    msg: "Hub version: {{ ansible_local.hub.INSTALLED_HUB_VERSION|default('None') }}"
+
 - name: Check if hub.fact exists
   stat:
     path: /etc/ansible/facts.d/hub.fact
