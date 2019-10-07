@@ -3,17 +3,11 @@
   debug:
     msg: "Hub version: {{ ansible_local.hub.INSTALLED_HUB_VERSION|default('None') }}"
 
-- name: Check if hub.fact exists
-  stat:
-    path: /etc/ansible/facts.d/hub.fact
-  register: hub_fact
-
 - name: Create /etc/ansible/facts.d/
   file:
     path: /etc/ansible/facts.d/
     state: directory
   become: true
-  when: not hub_fact.stat.exists
 
 - name: Download and extract hub {{ HUB_VERSION }} to /usr/local/bin/hub
   unarchive:
