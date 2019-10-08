@@ -1,0 +1,6 @@
+---
+- name: Prepare
+  hosts: all
+  roles:
+    - role: tmux
+      TMUX_VERSION: 2.7
