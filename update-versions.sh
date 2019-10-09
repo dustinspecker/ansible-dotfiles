@@ -27,5 +27,6 @@ update_version() {
 
 update_version "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
 update_version "github" "hub" hub/vars/main.yml hub/molecule/default/tests/test_default.py
+update_version "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
 update_version "sharkdp" "bat"
 update_version "sharkdp" "fd"
