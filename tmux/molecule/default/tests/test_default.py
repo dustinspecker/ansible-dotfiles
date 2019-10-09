@@ -5,6 +5,8 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
+TPM_VERSION = '3.0.0'
+
 
 def test_tmux_installed(host):
     assert host.check_output('tmux -V') == 'tmux 2.8'
@@ -23,10 +25,8 @@ def test_tmux_conf_copied(host):
 
 
 def test_tmux_package_manager_installed(host):
-    tpm = host.file('/home/ubuntu/.tmux/plugins/tpm')
-
-    assert tpm.exists
-    assert tpm.is_directory
+    cmd = 'git -C ~/.tmux/plugins/tpm describe --exact-match HEAD'
+    assert host.check_output(cmd) == 'v%s' % TPM_VERSION
 
 
 def test_tmux_plugins_installed(host):

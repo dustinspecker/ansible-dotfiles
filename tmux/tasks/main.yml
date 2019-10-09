@@ -13,7 +13,7 @@
   git:
     dest: ~/.tmux/plugins/tpm
     repo: https://github.com/tmux-plugins/tpm
-    version: master
+    version: "v{{ TPM_VERSION }}"
 
 - name: Copy .tmux.conf to ~ directory
   copy:
