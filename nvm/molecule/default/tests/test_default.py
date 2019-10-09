@@ -6,7 +6,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 NODE_VERSION = '10.15.0'
-NVM_VERSION = '0.34.0'
+NVM_VERSION = '0.35.0'
 
 
 def test_nvm_installed(host):
