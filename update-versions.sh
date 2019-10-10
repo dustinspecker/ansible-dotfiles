@@ -10,7 +10,7 @@ if ! [ -x "$(command -v jq)" ]; then
   exit 1
 fi
 
-update_version() {
+update_version_via_tags() {
   local github_org="$1"
   local repo_name="$2"
   local task_file="${3:-packages-system/tasks/debian.yml}"
@@ -25,9 +25,9 @@ update_version() {
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
 }
 
-update_version "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
-update_version "github" "hub" hub/vars/main.yml hub/molecule/default/tests/test_default.py
-update_version "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
-update_version "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
-update_version "sharkdp" "bat"
-update_version "sharkdp" "fd"
+update_version_via_tags "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
+update_version_via_tags "github" "hub" hub/vars/main.yml hub/molecule/default/tests/test_default.py
+update_version_via_tags "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
+update_version_via_tags "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
+update_version_via_tags "sharkdp" "bat"
+update_version_via_tags "sharkdp" "fd"
