@@ -25,6 +25,21 @@ update_version() {
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
 }
 
+update_version_via_releases() {
+  local github_org="$1"
+  local repo_name="$2"
+  local task_file="${3:-packages-system/tasks/debian.yml}"
+  local test_file="${4:-packages-system/molecule/default/tests/test_default.py}"
+
+  local upper_repo_name
+  upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
+
+  url="https://api.github.com/repos/$github_org/$repo_name/releases"
+  jqFilter="first(.[] | select(.prerelease == false)) | .tag_name"
+
+  update_version "$url" "$jqFilter" "$task_file" "$test_file"
+}
+
 update_version_via_tags() {
   local github_org="$1"
   local repo_name="$2"
