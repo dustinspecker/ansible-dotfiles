@@ -61,3 +61,4 @@ update_version_via_tags "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/te
 update_version_via_tags "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
 update_version_via_tags "sharkdp" "bat"
 update_version_via_tags "sharkdp" "fd"
+update_version_via_releases "tmux" "tmux" tmux/vars/main.yml tmux/molecule/default/tests/test_default.py
