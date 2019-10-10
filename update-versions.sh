@@ -28,8 +28,8 @@ update_version() {
 update_version_via_releases() {
   local github_org="$1"
   local repo_name="$2"
-  local task_file="${3:-packages-system/tasks/debian.yml}"
-  local test_file="${4:-packages-system/molecule/default/tests/test_default.py}"
+  local task_file="$3"
+  local test_file="$4"
 
   local upper_repo_name
   upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
@@ -43,8 +43,8 @@ update_version_via_releases() {
 update_version_via_tags() {
   local github_org="$1"
   local repo_name="$2"
-  local task_file="${3:-packages-system/tasks/debian.yml}"
-  local test_file="${4:-packages-system/molecule/default/tests/test_default.py}"
+  local task_file="$3"
+  local test_file="$4"
 
   local upper_repo_name
   upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
@@ -59,6 +59,6 @@ update_version_via_tags "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/
 update_version_via_tags "github" "hub" hub/vars/main.yml hub/molecule/default/tests/test_default.py
 update_version_via_tags "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
 update_version_via_tags "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
-update_version_via_tags "sharkdp" "bat"
-update_version_via_tags "sharkdp" "fd"
+update_version_via_tags "sharkdp" "bat" packages-system/tasks/main.yml packages-system/molecule/default/tests/test_default.py
+update_version_via_tags "sharkdp" "fd" packages-system/tasks/main.yml packages-system/molecule/default/tests/test_default.py
 update_version_via_releases "tmux" "tmux" tmux/vars/main.yml tmux/molecule/default/tests/test_default.py
