@@ -38,10 +38,6 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 1. Vim with vim-plug
 1. Zsh (with pure-prompt and z)
 
-## How to Create New Roles
-
-1. Scaffold via `molecule init role -r ROLE_NAME`
-
 ## How to Develop Roles
 
 1. Navigate to role (such as git)
@@ -52,6 +48,10 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 1. Activate virtualenv via `source .venv/bin/activate`
 1. Run `pip install molecule docker`
 1. Run `molecule test` to execute tests for respective role
+
+## How to Create New Roles
+
+1. Scaffold via `molecule init role -r ROLE_NAME`
 
 ## License
 MIT
