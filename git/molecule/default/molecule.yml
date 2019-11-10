@@ -6,6 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: ubuntu-1910
+    image: ubuntu:19.10
   - name: ubuntu-1804
     image: ubuntu:18.04
   - name: ubuntu-1604
