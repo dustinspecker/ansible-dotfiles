@@ -40,13 +40,11 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 
 ## How to Develop Roles
 
-1. Navigate to role (such as git)
 1. Install Docker and make sure it's running
-1. Install pip
-1. Install virtualenv via `pip install virtualenv`
-1. Setup virtualenv via `virtualenv .venv`
-1. Activate virtualenv via `source .venv/bin/activate`
-1. Run `pip install molecule docker`
+1. Install [pipenv](https://github.com/pypa/pipenv#installation)
+1. Navigate to ansible-dotfiles directory
+1. Run `pipenv sync --dev`
+1. Navigate to role (such as git)
 1. Run `molecule test` to execute tests for respective role
 
 ## How to Create New Roles

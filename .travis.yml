@@ -19,7 +19,8 @@ matrix:
 before_install:
   - if ./check-role-changed.sh; then echo "$ROLE changed - testing"; else echo "$ROLE not changed - exiting" && travis_terminate 0; fi
   - sudo apt-get -qq update
+  - pip install pipenv
 install:
-  - pip install molecule docker
+  - pipenv sync --dev
 script:
   - make test
