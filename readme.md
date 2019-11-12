@@ -43,8 +43,8 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 1. Install Docker and make sure it's running
 1. Install [pipenv](https://github.com/pypa/pipenv#installation)
 1. Navigate to ansible-dotfiles directory
-1. Run `pipenv sync --dev`
-1. Run `pipenv shell`
+1. Run `pipenv sync --dev` to install dependencies
+1. Run `pipenv shell` to activate a virtualenv
 1. Navigate to role (such as git)
 1. Run `molecule test` to execute tests for respective role
 
