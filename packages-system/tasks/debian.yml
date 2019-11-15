@@ -2,6 +2,7 @@
 - name: Install packages via apt
   apt:
     name:
+      - httpie
       - jq
       - silversearcher-ag
   become: true

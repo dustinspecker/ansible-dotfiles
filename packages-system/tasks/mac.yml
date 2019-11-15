@@ -4,6 +4,7 @@
     name:
       - bat
       - fd
+      - httpie
       - jq
       - the_silver_searcher
     state: latest

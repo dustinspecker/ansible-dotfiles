@@ -13,6 +13,7 @@ def test_packages_are_installed(host):
     packages = [
         {'name': 'bat', 'version': BAT_VERSION},
         {'name': 'fd', 'version': FD_VERSION},
+        'httpie',
         'jq',
         'silversearcher-ag'
     ]
