@@ -23,4 +23,5 @@ before_install:
 install:
   - pipenv sync --dev
 script:
+  - make shellcheck
   - make test
