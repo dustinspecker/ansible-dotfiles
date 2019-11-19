@@ -25,6 +25,15 @@ update_version() {
 
   sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" "$vars_file"
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
+
+  role=$(echo "$vars_file" | awk -F/ '{ print $1 }')
+
+  if [ "$(git status --short "$role" | wc --lines)" -ne 0 ]; then
+    make ROLE="$role" test
+
+    git add "$role"
+    git commit --message="feat($role): update $repo_name to $latest_version"
+  fi
 }
 
 update_version_via_releases() {
