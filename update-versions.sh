@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ex
 
 if ! [ -x "$(command -v http)" ]; then
   echo "Error: httpie must be installed" >&2
