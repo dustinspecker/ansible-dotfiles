@@ -12,10 +12,11 @@ if ! [ -x "$(command -v jq)" ]; then
 fi
 
 update_version() {
-  local url="$1"
-  local jqFilter="$2"
-  local vars_file="$3"
-  local test_file="$4"
+  local repo_name="$1"
+  local url="$2"
+  local jqFilter="$3"
+  local vars_file="$4"
+  local test_file="$5"
 
   local upper_repo_name
   upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
@@ -38,7 +39,7 @@ update_version_via_releases() {
   url="https://api.github.com/repos/$github_org/$repo_name/releases"
   jqFilter="first(.[] | select(.prerelease == false)) | .tag_name"
 
-  update_version "$url" "$jqFilter" "$vars_file" "$test_file"
+  update_version "$repo_name" "$url" "$jqFilter" "$vars_file" "$test_file"
 }
 
 update_version_via_tags() {
@@ -53,7 +54,7 @@ update_version_via_tags() {
   url="https://api.github.com/repos/$github_org/$repo_name/tags"
   jqFilter="first(.[]) | .name"
 
-  update_version "$url" "$jqFilter" "$vars_file" "$test_file"
+  update_version "$repo_name" "$url" "$jqFilter" "$vars_file" "$test_file"
 }
 
 update_version_via_tags "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
