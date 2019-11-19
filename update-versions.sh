@@ -13,7 +13,7 @@ fi
 update_version() {
   local url="$1"
   local jqFilter="$2"
-  local task_file="$3"
+  local vars_file="$3"
   local test_file="$4"
 
   local upper_repo_name
@@ -21,14 +21,14 @@ update_version() {
 
   latest_version=$(http "$url"| jq -crM "$jqFilter" | sed 's/^v//')
 
-  sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" "$task_file"
+  sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" "$vars_file"
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
 }
 
 update_version_via_releases() {
   local github_org="$1"
   local repo_name="$2"
-  local task_file="$3"
+  local vars_file="$3"
   local test_file="$4"
 
   local upper_repo_name
@@ -37,13 +37,13 @@ update_version_via_releases() {
   url="https://api.github.com/repos/$github_org/$repo_name/releases"
   jqFilter="first(.[] | select(.prerelease == false)) | .tag_name"
 
-  update_version "$url" "$jqFilter" "$task_file" "$test_file"
+  update_version "$url" "$jqFilter" "$vars_file" "$test_file"
 }
 
 update_version_via_tags() {
   local github_org="$1"
   local repo_name="$2"
-  local task_file="$3"
+  local vars_file="$3"
   local test_file="$4"
 
   local upper_repo_name
@@ -52,7 +52,7 @@ update_version_via_tags() {
   url="https://api.github.com/repos/$github_org/$repo_name/tags"
   jqFilter="first(.[]) | .name"
 
-  update_version "$url" "$jqFilter" "$task_file" "$test_file"
+  update_version "$url" "$jqFilter" "$vars_file" "$test_file"
 }
 
 update_version_via_tags "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
