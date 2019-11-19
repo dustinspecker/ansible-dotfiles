@@ -33,9 +33,6 @@ update_version_via_releases() {
   local vars_file="$3"
   local test_file="$4"
 
-  local upper_repo_name
-  upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
-
   url="https://api.github.com/repos/$github_org/$repo_name/releases"
   jqFilter="first(.[] | select(.prerelease == false)) | .tag_name"
 
@@ -47,9 +44,6 @@ update_version_via_tags() {
   local repo_name="$2"
   local vars_file="$3"
   local test_file="$4"
-
-  local upper_repo_name
-  upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
 
   url="https://api.github.com/repos/$github_org/$repo_name/tags"
   jqFilter="first(.[]) | .name"
