@@ -5,7 +5,7 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
-FZF_VERSION = '0.18.0'
+FZF_VERSION = '0.19.0'
 
 
 def test_fzf_cloned_and_checked_out_tag(host):
