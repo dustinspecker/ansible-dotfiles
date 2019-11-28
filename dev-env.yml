@@ -6,6 +6,7 @@
   roles:
     - {role: fzf, tags: ['fzf']}
     - {role: git, tags: ['git']}
+    - {role: go, tags: ['go']}
     - {role: hub, tags: ['hub']}
     - {role: nvm, tags: ['nvm']}
     - {role: packages-system, tags: ['packages-system']}
