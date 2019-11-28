@@ -4,7 +4,7 @@
 
 - name: Previous go version
   debug:
-    msg: "go version: {{ ansible_local.hub.INSTALLED_GO_VERSION|default('None') }}"
+    msg: "go version: {{ ansible_local.go.INSTALLED_GO_VERSION|default('None') }}"
 
 - name: Download and extract go to /usr/local/go
   unarchive:
