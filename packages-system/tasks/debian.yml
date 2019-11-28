@@ -5,6 +5,7 @@
       - httpie
       - jq
       - silversearcher-ag
+      - tree
   become: true
 
 - name: Install bat via .deb from github release

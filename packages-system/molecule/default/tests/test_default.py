@@ -15,7 +15,8 @@ def test_packages_are_installed(host):
         {'name': 'fd', 'version': FD_VERSION},
         'httpie',
         'jq',
-        'silversearcher-ag'
+        'silversearcher-ag',
+        'tree'
     ]
 
     for package in packages:

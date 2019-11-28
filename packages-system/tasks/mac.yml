@@ -7,4 +7,5 @@
       - httpie
       - jq
       - the_silver_searcher
+      - tree
     state: latest
