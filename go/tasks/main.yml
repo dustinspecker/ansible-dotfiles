@@ -12,6 +12,7 @@
     remote_src: true
     src: https://dl.google.com/go/go{{ GO_VERSION }}.{{ ansible_system }}-amd64.tar.gz
   when: ansible_local.go.INSTALLED_GO_VERSION|default('None') != GO_VERSION
+  become: true
 
 - name: Create /etc/ansible/facts.d/
   file:
