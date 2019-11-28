@@ -1,0 +1,28 @@
+---
+- import_tasks: mac.yml
+  when: ansible_os_family == 'Darwin'
+
+- name: Previous go version
+  debug:
+    msg: "go version: {{ ansible_local.hub.INSTALLED_GO_VERSION|default('None') }}"
+
+- name: Download and extract go to /usr/local/go
+  unarchive:
+    dest: /usr/local/
+    remote_src: true
+    src: https://dl.google.com/go/go{{ GO_VERSION }}.{{ ansible_system }}-amd64.tar.gz
+  when: ansible_local.go.INSTALLED_GO_VERSION|default('None') != GO_VERSION
+
+- name: Create /etc/ansible/facts.d/
+  file:
+    path: /etc/ansible/facts.d/
+    state: directory
+  become: true
+
+- name: Update go version fact
+  template:
+    dest: /etc/ansible/facts.d/go.fact
+    force: true
+    mode: 0755
+    src: go.fact.j2
+  become: true

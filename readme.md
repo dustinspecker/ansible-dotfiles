@@ -27,6 +27,7 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 
 1. fzf
 1. Git (with gitk)
+1. go
 1. hub
 1. nvm
 1. packages-system

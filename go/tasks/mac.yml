@@ -1,0 +1,5 @@
+---
+- name: Install gnu-tar via brew
+  homebrew:
+    name: gnu-tar
+    state: latest

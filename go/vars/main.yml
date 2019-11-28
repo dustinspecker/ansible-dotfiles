@@ -1,0 +1,3 @@
+---
+# vars file for go
+GO_VERSION: 1.13.4

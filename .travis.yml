@@ -8,6 +8,7 @@ matrix:
   include:
     - env: ROLE=fzf
     - env: ROLE=git
+    - env: ROLE=go
     - env: ROLE=hub
     - env: ROLE=nvm
     - env: ROLE=packages-system
