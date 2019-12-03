@@ -66,5 +66,4 @@ update_version_via_tags "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/te
 update_version_via_tags "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
 update_version_via_tags "sharkdp" "bat" packages-system/tasks/main.yml packages-system/molecule/default/tests/test_default.py
 update_version_via_tags "sharkdp" "fd" packages-system/tasks/main.yml packages-system/molecule/default/tests/test_default.py
-# don't update to tmux 3.0 until https://github.com/tmux-plugins/tmux-resurrect/issues/316 is fixed
-# update_version_via_releases "tmux" "tmux" tmux/vars/main.yml tmux/molecule/default/tests/test_default.py
+update_version_via_releases "tmux" "tmux" tmux/vars/main.yml tmux/molecule/default/tests/test_default.py
