@@ -44,6 +44,7 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 
 1. Install Docker and make sure it's running
 1. Install [pipenv](https://github.com/pypa/pipenv#installation)
+  - `python3.8 -m pip install pipenv==2020.11.15`
 1. Navigate to ansible-dotfiles directory
 1. Run `pipenv sync --dev` to install dependencies
 1. Run `pipenv shell` to activate a virtualenv
