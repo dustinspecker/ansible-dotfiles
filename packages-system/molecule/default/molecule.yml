@@ -10,8 +10,6 @@ platforms:
     image: ubuntu:19.10
   - name: ubuntu-1804
     image: ubuntu:18.04
-  - name: ubuntu-1604
-    image: ubuntu:16.04
 provisioner:
   name: ansible
   lint:
