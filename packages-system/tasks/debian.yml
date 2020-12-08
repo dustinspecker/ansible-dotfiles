@@ -9,15 +9,11 @@
   become: true
 
 - name: Install bat via .deb from github release
-  vars:
-    BAT_VERSION: 0.12.1
   apt:
     deb: https://github.com/sharkdp/bat/releases/download/v{{ BAT_VERSION }}/bat_{{ BAT_VERSION }}_amd64.deb
   become: true
 
 - name: Install fd via .deb from github release
-  vars:
-    FD_VERSION: 7.4.0
   apt:
     deb: https://github.com/sharkdp/fd/releases/download/v{{ FD_VERSION }}/fd_{{ FD_VERSION }}_amd64.deb
   become: true
