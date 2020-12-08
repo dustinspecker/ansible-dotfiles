@@ -1,4 +1,4 @@
-ROLE := fzf git hub nvm packages-system tmux vim zsh
+ROLE := fzf git go hub nvm packages-system tmux vim zsh
 
 .PHONY: roles
 roles: $(ROLE)
