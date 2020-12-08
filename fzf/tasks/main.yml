@@ -12,4 +12,4 @@
   unarchive:
     dest: ~/.fzf/bin/
     remote_src: true
-    src: https://github.com/junegunn/fzf-bin/releases/download/{{ FZF_VERSION }}/fzf-{{ FZF_VERSION }}-{{ ansible_system }}_amd64.tgz
+    src: https://github.com/junegunn/fzf/releases/download/{{ FZF_VERSION }}/fzf-{{ FZF_VERSION }}-{{ ansible_system | lower }}_amd64.tar.gz
