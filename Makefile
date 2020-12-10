@@ -9,7 +9,7 @@ $(ROLE):
 
 .PHONY: shellcheck
 shellcheck:
-	docker run -it -v "${PWD}:/mnt" koalaman/shellcheck:v0.7.0 *.sh
+	docker run --rm -it -v "${PWD}:/mnt" koalaman/shellcheck:v0.7.0 *.sh
 
 .PHONY: test
 test:
