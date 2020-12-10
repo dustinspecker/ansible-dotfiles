@@ -6,4 +6,6 @@ if [ -z "$ROLE" ]; then
   exit 1
 fi
 
-git diff --name-only "${TRAVIS_COMMIT_RANGE:-HEAD^}" | grep --extended-regexp "$ROLE|Pipfile|Makefile"
+COMMIT_RANGE="${COMMIT_RANGE:-origin/master..HEAD}"
+
+git diff --name-only "${COMMIT_RANGE}" | grep --extended-regexp "$ROLE|Pipfile|Makefile"
