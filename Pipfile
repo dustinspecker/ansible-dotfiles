@@ -4,10 +4,15 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+ansible = "==2.10.4"
 
 [dev-packages]
-molecule = "*"
-docker = "*"
+molecule = {version = "==3.2.0", extras = ["docker"]}
+molecule-vagrant = {version = "==0.6.1", extras = ["ansible"]}
+ansible-lint = "==4.3.7"
+flake8 = "==3.8.4"
+pytest = "==6.2.1"
+pytest-testinfra = "==6.1.0"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

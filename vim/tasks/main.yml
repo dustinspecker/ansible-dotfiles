@@ -9,6 +9,7 @@
     backup: true
     dest: ~/.vimrc
     src: vimrc
+    mode: '0644'
   notify:
     - Install vim plugins
 
@@ -16,6 +17,7 @@
   file:
     path: ~/.vim/autoload
     state: directory
+    mode: '0755'
 
 - name: Install vim-plug
   get_url:

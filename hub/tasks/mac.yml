@@ -1,5 +1,5 @@
 ---
-- name: Install hub via brew
+- name: Install hub via brew  # noqa 403
   homebrew:
     name: hub
     state: latest

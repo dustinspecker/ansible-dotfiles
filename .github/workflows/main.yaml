@@ -12,7 +12,7 @@ jobs:
           - go
           - hub
           - nvm
-          - packages-system
+          - packages_system
           - tmux
           - vim
           - zsh

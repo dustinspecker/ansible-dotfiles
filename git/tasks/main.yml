@@ -9,6 +9,7 @@
     backup: true
     dest: ~/.gitconfig
     src: gitconfig
+    mode: '0644'
 
 - name: Clone git-gerrit
   git:

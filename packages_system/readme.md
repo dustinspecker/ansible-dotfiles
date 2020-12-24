@@ -23,7 +23,7 @@ Example Playbook
 
     - hosts: localhost
       roles:
-         - { role: packages-system, tags: ['packages-system'] }
+         - { role: packages_system, tags: ['packages_system'] }
 
 License
 -------

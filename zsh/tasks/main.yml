@@ -8,6 +8,7 @@
   file:
     path: ~/.zfunctions
     state: directory
+    mode: '0755'
 
 - name: Install prompt_pure_setup zfunction
   get_url:
@@ -23,6 +24,7 @@
   file:
     path: ~/.zscripts
     state: directory
+    mode: '0755'
 
 - name: Install z tool
   get_url:
@@ -46,6 +48,7 @@
     backup: true
     dest: ~/.zshrc
     src: zshrc
+    mode: '0644'
 
 - name: Change default shell to /bin/zsh
   command: "chsh -s /bin/zsh {{ ansible_user_id }}"
@@ -56,6 +59,7 @@
   file:
     path: ~/.zcompletions
     state: directory
+    mode: '0755'
 
 - name: Download hub zsh completions
   get_url:

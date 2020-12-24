@@ -8,6 +8,7 @@
   file:
     path: ~/.tmux/plugins
     state: directory
+    mode: '0755'
 
 - name: Clone tmux package manager
   git:
@@ -20,5 +21,6 @@
     backup: true
     dest: ~/.tmux.conf
     src: tmux.conf
+    mode: '0644'
   notify:
     - Install tmux plugins

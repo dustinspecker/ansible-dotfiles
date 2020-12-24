@@ -1,5 +1,5 @@
 ---
-- name: Install zsh via brew
+- name: Install zsh via brew  # noqa 403
   homebrew:
     name: zsh
     state: latest

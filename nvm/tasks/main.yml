@@ -23,6 +23,7 @@
     backup: true
     dest: ~/.nvm/default-packages
     force: true
+    mode: '0644'
     src: default-packages
 
 - name: Check if node {{ NODE_VERSION }} is installed
@@ -43,6 +44,7 @@
 - name: Create /etc/ansible/facts.d/
   file:
     path: /etc/ansible/facts.d/
+    mode: '0755'
     state: directory
   become: true
 

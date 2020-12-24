@@ -64,6 +64,6 @@ update_version_via_tags "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/
 update_version_via_tags "github" "hub" hub/vars/main.yml hub/molecule/default/tests/test_default.py
 update_version_via_tags "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
 update_version_via_tags "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
-update_version_via_tags "sharkdp" "bat" packages-system/vars/main.yml packages-system/molecule/default/tests/test_default.py
-update_version_via_tags "sharkdp" "fd" packages-system/vars/main.yml packages-system/molecule/default/tests/test_default.py
+update_version_via_tags "sharkdp" "bat" packages_system/vars/main.yml packages_system/molecule/default/tests/test_default.py
+update_version_via_tags "sharkdp" "fd" packages_system/vars/main.yml packages_system/molecule/default/tests/test_default.py
 update_version_via_releases "tmux" "tmux" tmux/vars/main.yml tmux/molecule/default/tests/test_default.py

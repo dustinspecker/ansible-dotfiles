@@ -1,5 +1,5 @@
 ---
-- name: Install packages via brew
+- name: Install packages via brew  # noqa 403
   homebrew:
     name:
       - bat
