@@ -4,12 +4,12 @@
 - name: set up dev env
   hosts: all
   roles:
-    - {role: fzf, tags: ['fzf']}
-    - {role: git, tags: ['git']}
-    - {role: go, tags: ['go']}
-    - {role: hub, tags: ['hub']}
-    - {role: nvm, tags: ['nvm']}
-    - {role: packages_system, tags: ['packages_system']}
-    - {role: tmux, tags: ['tmux']}
-    - {role: vim, tags: ['vim']}
-    - {role: zsh, tags: ['zsh']}
+    - {role: dustinspecker.fzf, tags: ['fzf']}
+    - {role: dustinspecker.git, tags: ['git']}
+    - {role: dustinspecker.go, tags: ['go']}
+    - {role: dustinspecker.hub, tags: ['hub']}
+    - {role: dustinspecker.nvm, tags: ['nvm']}
+    - {role: dustinspecker.packages_system, tags: ['packages_system']}
+    - {role: dustinspecker.tmux, tags: ['tmux']}
+    - {role: dustinspecker.vim, tags: ['vim']}
+    - {role: dustinspecker.zsh, tags: ['zsh']}

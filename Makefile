@@ -13,4 +13,4 @@ shellcheck:
 
 .PHONY: test
 test:
-	cd ./roles/${ROLE} && molecule test --parallel
+	cd ./roles/dustinspecker.${ROLE} && molecule test --parallel

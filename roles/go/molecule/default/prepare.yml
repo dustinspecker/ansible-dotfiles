@@ -1,6 +1,0 @@
----
-- name: Prepare
-  hosts: all
-  roles:
-    - role: go
-      GO_VERSION: 1.12

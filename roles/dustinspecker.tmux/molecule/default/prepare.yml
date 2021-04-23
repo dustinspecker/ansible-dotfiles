@@ -1,0 +1,6 @@
+---
+- name: Prepare
+  hosts: all
+  roles:
+    - role: dustinspecker.tmux
+      TMUX_VERSION: 2.7
