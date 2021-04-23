@@ -3,7 +3,7 @@ name: CI
 on: [pull_request, push]
 jobs:
   test:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         role:
@@ -25,9 +25,9 @@ jobs:
           LANG: "C.UTF-8"
           ROLE: "${{ matrix.role }}"
         run: |
-          sudo apt install python3.7 python3.7-dev --yes
-          python3.7 --version
-          python3.7 -m pip install pipenv
+          sudo apt install python3.8 python3.8-dev --yes
+          python3.8 --version
+          python3.8 -m pip install pipenv
           export PATH=$HOME/.local/bin/:$PATH
           pipenv sync --dev
           pipenv run make ${ROLE}
