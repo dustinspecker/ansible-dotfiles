@@ -2,8 +2,6 @@
 
 > I DevOps'd my dotfiles
 
-[![Build Status](https://travis-ci.org/dustinspecker/ansible-dotfiles.svg?branch=master)](https://travis-ci.org/dustinspecker/ansible-dotfiles)
-
 ## Usage (Ubuntu only)
 
 If you're comfortable piping `wget` output to `bash`, you may do the following:
