@@ -13,8 +13,4 @@ shellcheck:
 
 .PHONY: test
 test:
-	if ! ./check-role-changed.sh ; then \
-		exit 0; \
-	fi
-
 	cd ./${ROLE} && molecule test --parallel

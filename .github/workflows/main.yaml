@@ -25,13 +25,6 @@ jobs:
           LANG: "C.UTF-8"
           ROLE: "${{ matrix.role }}"
         run: |
-          if ./check-role-changed.sh ; then
-            echo "$ROLE changed - testing"
-          else
-            echo "$ROLE not changed - exiting"
-            exit 0
-          fi
-
           sudo apt install python3.7 python3.7-dev --yes
           python3.7 --version
           python3.7 -m pip install pipenv
