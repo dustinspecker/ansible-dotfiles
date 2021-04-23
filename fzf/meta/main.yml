@@ -3,6 +3,9 @@ galaxy_info:
   author: Dustin Specker
   description: Installs fzf
 
+  role_name: fzf
+  namespace: dustinspecker
+
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker

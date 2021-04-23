@@ -2,6 +2,8 @@
 galaxy_info:
   author: Dustin Specker
   description: Installs and configures Git
+  role_name: git
+  namespace: dustinspecker
   license: MIT
   min_ansible_version: 1.2
   galaxy_tags:
