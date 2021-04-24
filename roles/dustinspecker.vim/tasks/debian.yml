@@ -1,8 +1,15 @@
 ---
+- name: Install gnupg2 so git ppa can be added
+  apt:
+    name:
+      - gnupg2
+  become: true
+
 - name: Add vim apt repo to install latest vim
   apt_repository:
     filename: vim
     repo: ppa:jonathonf/vim
+    codename: "{{ ansible_facts.lsb.codename }}"
   become: true
 
 - name: Install vim via apt
