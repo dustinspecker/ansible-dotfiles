@@ -11,8 +11,8 @@ lint: |
 platforms:
   - name: ubuntu-2004
     image: ubuntu:20.04
-  - name: ubuntu-1804
-    image: ubuntu:18.04
+  - name: ubuntu-2104
+    image: ubuntu:21.04
 provisioner:
   name: ansible
 scenario:
