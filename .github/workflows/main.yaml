@@ -25,9 +25,8 @@ jobs:
           LANG: "C.UTF-8"
           ROLE: "${{ matrix.role }}"
         run: |
-          sudo apt install python3.8 python3.8-dev --yes
-          python3.8 --version
-          python3.8 -m pip install pipenv
+          python3 --version
+          python3 -m pip install pipenv
           export PATH=$HOME/.local/bin/:$PATH
           pipenv sync --dev
           pipenv run make ${ROLE}
