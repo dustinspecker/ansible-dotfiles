@@ -6,6 +6,9 @@
       - jq
       - silversearcher-ag
       - tree
+      # otherwise install bat's .deb results in error "There is no member named control"
+      # https://github.com/geerlingguy/docker-ubuntu1804-ansible/issues/7
+      - xz-utils
   become: true
 
 - name: Install bat via .deb from github release
