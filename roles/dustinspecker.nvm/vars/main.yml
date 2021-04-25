@@ -1,4 +1,4 @@
 ---
 # vars file for nvm
 NODE_VERSION: 15.5.0
-NVM_VERSION: 0.37.2
+NVM_VERSION: 0.38.0
