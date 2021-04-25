@@ -26,12 +26,12 @@ update_version() {
   sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" "$vars_file"
   sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
 
-  role=$(echo "$vars_file" | awk -F/ '{ print $1 }')
+  role=$(echo "$vars_file" | awk -F/ '{ print $2 }' | sed 's/dustinspecker\.//')
 
-  if [ "$(git status --short "$role" | wc --lines)" -ne 0 ]; then
+  if [ "$(git status --short "roles/dustinspecker.$role" | wc --lines)" -ne 0 ]; then
     make ROLE="$role" test
 
-    git add "$role"
+    git add "roles/dustinspecker.$role"
     git commit --message="feat($role): update $repo_name to $latest_version"
   fi
 }
@@ -60,10 +60,10 @@ update_version_via_tags() {
   update_version "$repo_name" "$url" "$jqFilter" "$vars_file" "$test_file"
 }
 
-update_version_via_tags "junegunn" "fzf" fzf/vars/main.yml fzf/molecule/default/tests/test_default.py
-update_version_via_tags "github" "hub" hub/vars/main.yml hub/molecule/default/tests/test_default.py
-update_version_via_tags "nvm-sh" "nvm" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
-update_version_via_tags "nodejs" "node" nvm/vars/main.yml nvm/molecule/default/tests/test_default.py
-update_version_via_tags "sharkdp" "bat" packages_system/vars/main.yml packages_system/molecule/default/tests/test_default.py
-update_version_via_tags "sharkdp" "fd" packages_system/vars/main.yml packages_system/molecule/default/tests/test_default.py
-update_version_via_releases "tmux" "tmux" tmux/vars/main.yml tmux/molecule/default/tests/test_default.py
+update_version_via_tags "junegunn" "fzf" roles/dustinspecker.fzf/vars/main.yml roles/dustinspecker.fzf/molecule/default/tests/test_default.py
+update_version_via_tags "github" "hub" roles/dustinspecker.hub/vars/main.yml roles/dustinspecker.hub/molecule/default/tests/test_default.py
+update_version_via_tags "nvm-sh" "nvm" roles/dustinspecker.nvm/vars/main.yml roles/dustinspecker.nvm/molecule/default/tests/test_default.py
+update_version_via_tags "nodejs" "node" roles/dustinspecker.nvm/vars/main.yml roles/dustinspecker.nvm/molecule/default/tests/test_default.py
+update_version_via_tags "sharkdp" "bat" roles/dustinspecker.packages_system/vars/main.yml roles/dustinspecker.packages_system/molecule/default/tests/test_default.py
+update_version_via_tags "sharkdp" "fd" roles/dustinspecker.packages_system/vars/main.yml roles/dustinspecker.packages_system/molecule/default/tests/test_default.py
+update_version_via_releases "tmux" "tmux" roles/dustinspecker.tmux/vars/main.yml roles/dustinspecker.tmux/molecule/default/tests/test_default.py
