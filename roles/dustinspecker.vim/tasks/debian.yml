@@ -9,7 +9,7 @@
   apt_repository:
     filename: vim
     repo: ppa:jonathonf/vim
-    codename: "{{ ansible_facts.lsb.codename }}"
+    codename: "{{ (ansible_facts.lsb.codename == 'impish') | ternary('hirsute', ansible_facts.lsb.codename) }}"
   become: true
 
 - name: Install vim via apt
