@@ -7,7 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']
 ).get_hosts('all')
 
-GO_VERSION = '1.15.6'
+GO_VERSION = '1.17.4'
 
 
 def test_go_installed(host):
