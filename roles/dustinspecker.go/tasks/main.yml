@@ -14,6 +14,13 @@
   register: go_version
   changed_when: false
 
+- name: Delete previous version of go to prevent corrupt go installation
+  file:
+    path: /usr/local/go
+    state: absent
+  when: go_version.stdout|default('None') != GO_VERSION
+  become: true
+
 - name: Download and extract go to /usr/local/go
   unarchive:
     dest: /usr/local/
