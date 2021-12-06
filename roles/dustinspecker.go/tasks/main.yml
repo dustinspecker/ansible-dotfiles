@@ -3,28 +3,21 @@
   when: ansible_os_family == 'Darwin'
 
 - name: Previous go version
-  debug:
-    msg: "go version: {{ ansible_local.go.INSTALLED_GO_VERSION|default('None') }}"
+  shell: |
+    set -o pipefail
+
+    if command -v /usr/local/go/bin/go > /dev/null ; then
+      /usr/local/go/bin/go version | sed 's/.*go\(.*\) .*/\1/'
+    fi
+  args:
+    executable: /bin/bash
+  register: go_version
+  changed_when: false
 
 - name: Download and extract go to /usr/local/go
   unarchive:
     dest: /usr/local/
     remote_src: true
     src: https://dl.google.com/go/go{{ GO_VERSION }}.{{ ansible_system }}-amd64.tar.gz
-  when: ansible_local.go.INSTALLED_GO_VERSION|default('None') != GO_VERSION
-  become: true
-
-- name: Create /etc/ansible/facts.d/
-  file:
-    path: /etc/ansible/facts.d/
-    state: directory
-    mode: '0755'
-  become: true
-
-- name: Update go version fact
-  template:
-    dest: /etc/ansible/facts.d/go.fact
-    force: true
-    mode: 0755
-    src: go.fact.j2
+  when: go_version.stdout|default('None') != GO_VERSION
   become: true
