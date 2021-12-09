@@ -10,9 +10,3 @@
     dest: ~/.gitconfig
     src: gitconfig
     mode: '0644'
-
-- name: Clone git-gerrit
-  git:
-    dest: ~/git-gerrit
-    repo: https://github.com/dustinspecker/git-gerrit
-    version: master
