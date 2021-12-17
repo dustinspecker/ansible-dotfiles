@@ -143,6 +143,14 @@ nnoremap <leader><leader>n :cnext<CR>
 nnoremap <leader><leader>c :cclose<CR>
 nnoremap <leader><leader>o :copen<CR>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Move line selection in visual mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://www.reddit.com/r/neovim/comments/rfrgq5/comment/hog28q3
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 """"""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
