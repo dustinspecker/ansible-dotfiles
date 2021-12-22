@@ -36,18 +36,18 @@ set +e
 (git --no-pager diff --quiet --exit-code)
 local_changed_files=$?
 
-# only update local git if local git is not ahead of master
-(($(git rev-list --right-only --count origin/master..master) == 0))
-ahead_of_origin_master=$?
+# only update local git if local git is not ahead of main
+(($(git rev-list --right-only --count origin/main..main) == 0))
+ahead_of_origin_main=$?
 
 # go back to exiting if any command fails
 set -e
 
 # update local git if zero local changes
-if [[ ${local_changed_files} -eq 0 && ${ahead_of_origin_master} -eq 0 ]]; then
-  git reset --hard origin/master
+if [[ ${local_changed_files} -eq 0 && ${ahead_of_origin_main} -eq 0 ]]; then
+  git reset --hard origin/main
 else
-  echo 'Local git has changes or is ahead of origin/master, so not updating local git.'
+  echo 'Local git has changes or is ahead of origin/main, so not updating local git.'
 fi
 
 # execute playbook to setup development environment

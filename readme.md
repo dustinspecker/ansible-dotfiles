@@ -7,7 +7,7 @@
 If you're comfortable piping `wget` output to `bash`, you may do the following:
 
 ```bash
-wget -O - https://raw.githubusercontent.com/dustinspecker/ansible-dotfiles/master/install-ubuntu.sh | bash
+wget -O - https://raw.githubusercontent.com/dustinspecker/ansible-dotfiles/main/install-ubuntu.sh | bash
 ```
 
 This will install `ansible`, fetch this repository, and execute the playbook.
