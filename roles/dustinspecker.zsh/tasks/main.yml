@@ -13,12 +13,12 @@
 - name: Install prompt_pure_setup zfunction
   get_url:
     dest: ~/.zfunctions/prompt_pure_setup
-    url: https://raw.githubusercontent.com/sindresorhus/pure/master/pure.zsh
+    url: https://raw.githubusercontent.com/sindresorhus/pure/v1.18.0/pure.zsh
 
 - name: Install async zfunction
   get_url:
     dest: ~/.zfunctions/async
-    url: https://raw.githubusercontent.com/sindresorhus/pure/master/async.zsh
+    url: https://raw.githubusercontent.com/sindresorhus/pure/v1.18.0/async.zsh
 
 - name: Create ~/.zscripts directory
   file:
@@ -29,19 +29,19 @@
 - name: Install z tool
   get_url:
     dest: ~/.zscripts/z.sh
-    url: https://raw.githubusercontent.com/rupa/z/master/z.sh
+    url: https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
 
 - name: Clone zsh-syntax-highlighting
   git:
     dest: ~/.zscripts/zsh-syntax-highlighting
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
-    version: master
+    version: 0.7.1
 
 - name: Clone zsh-autosuggestions
   git:
     dest: ~/.zscripts/zsh-autosuggestions
     repo: https://github.com/zsh-users/zsh-autosuggestions
-    version: master
+    version: v0.7.0
 
 - name: Copy zshrc ~/.zshrc
   copy:
@@ -64,4 +64,4 @@
 - name: Download hub zsh completions
   get_url:
     dest: ~/.zcompletions/_hub
-    url: https://raw.githubusercontent.com/github/hub/master/etc/hub.zsh_completion
+    url: https://raw.githubusercontent.com/github/hub/v2.14.2/etc/hub.zsh_completion

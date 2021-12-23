@@ -37,6 +37,17 @@ def test_zsh_syntax_highlighting_enabled(host):
     assert ('no such file' not in ''.join(zsh_source['stderr_lines']))
 
 
+def test_zsh_syntax_highlighting_version(host):
+    expected_syntax_version = '0.7.1'
+
+    cmd = ('git '
+           '--git-dir=/home/ubuntu/.zscripts/zsh-syntax-highlighting/.git/ '
+           'describe --tags')
+    actual_version = host.check_output(cmd)
+
+    assert expected_syntax_version == actual_version
+
+
 def test_zsh_autosuggestion_enabled(host):
     zsh_source = host.ansible(
         'raw',
@@ -49,6 +60,16 @@ def test_zsh_autosuggestion_enabled(host):
 
     assert (expected_file_path in ''.join(zsh_source['stderr_lines']))
     assert ('no such file' not in ''.join(zsh_source['stderr_lines']))
+
+
+def test_zsh_autosuggestions_version(host):
+    expected_suggestions_version = 'v0.7.0'
+
+    cmd = ('git --git-dir=/home/ubuntu/.zscripts/zsh-autosuggestions/.git/ '
+           'describe --tags')
+    actual_version = host.check_output(cmd)
+
+    assert expected_suggestions_version == actual_version
 
 
 def test_zsh_incremental_search_pattern_bound(host):
