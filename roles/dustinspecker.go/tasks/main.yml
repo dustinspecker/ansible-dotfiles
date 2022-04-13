@@ -18,7 +18,7 @@
   file:
     path: /usr/local/go
     state: absent
-  when: go_version.stdout|default('None') != GO_VERSION
+  when: go_version.stdout|default('None') != GO_VERSION|quote
   become: true
 
 - name: Download and extract go to /usr/local/go
@@ -26,5 +26,5 @@
     dest: /usr/local/
     remote_src: true
     src: https://dl.google.com/go/go{{ GO_VERSION }}.{{ ansible_system }}-amd64.tar.gz
-  when: go_version.stdout|default('None') != GO_VERSION
+  when: go_version.stdout|default('None') != GO_VERSION|quote
   become: true
