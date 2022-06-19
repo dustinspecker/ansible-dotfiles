@@ -16,14 +16,11 @@ sudo apt-get install --yes ansible
 # install git so ansible-dotfiles can be cloned
 sudo apt-get install --yes git
 
-# clone repository if not already cloned
-if [ -d ~/ansible-dotfiles ]; then
-  echo "$HOME/ansible-dotfiles already cloned! Make sure it is a clone of: http://github.com/dustinspecker/ansible-dotfiles.git"
-else
+# clone repository if not in an ansible-dotfiles directory already
+if [ "$(basename "$PWD")" != "ansible-dotfiles" ]; then
   git clone http://github.com/dustinspecker/ansible-dotfiles.git ~/ansible-dotfiles
+  cd ~/ansible-dotfiles
 fi
-
-cd ~/ansible-dotfiles
 
 # update origin references in case it is stale
 git fetch
