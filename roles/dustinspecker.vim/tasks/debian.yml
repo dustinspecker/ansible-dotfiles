@@ -5,13 +5,6 @@
       - gnupg2
   become: true
 
-- name: Add vim apt repo to install latest vim
-  apt_repository:
-    filename: vim
-    repo: ppa:jonathonf/vim
-    codename: "{{ (ansible_facts.lsb.codename == 'impish') | ternary('hirsute', ansible_facts.lsb.codename) }}"
-  become: true
-
 - name: Install vim via apt
   apt:
     name: "{{ packages }}"
