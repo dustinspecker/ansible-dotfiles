@@ -4,6 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'andrewradev/splitjoin.vim'
 Plug 'ap/vim-buftabline'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -17,6 +18,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-fakeclip'
 Plug 'mxw/vim-jsx'
 Plug 'othree/yajs'
+Plug 'sirver/ultisnips'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -36,11 +38,18 @@ set history=500
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Set to enable commands to auto write file before executing command
+" such as :GoBuild
+set autowrite
+
 " Enable filetype plugins
 filetype plugin indent on
 
 " Set leader to space
 let mapleader = "\<Space>"
+
+" Update info tab more frequently
+set updatetime=100
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tab
@@ -191,6 +200,21 @@ augroup markdown
 	au!
 	au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-go
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_auto_sameids = 1
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-json
