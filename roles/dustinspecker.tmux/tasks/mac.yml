@@ -8,3 +8,8 @@
   community.general.packaging.os.homebrew:
     name: reattach-to-user-namespace
     state: latest
+
+- name: Install gawk for tmux-fingers  # noqa 403
+  community.general.packaging.os.homebrew:
+    name: gawk
+    state: latest

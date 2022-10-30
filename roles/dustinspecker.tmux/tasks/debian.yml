@@ -48,6 +48,11 @@
     name: xsel=*
   become: true
 
+- name: Install gawk for tmux-fingers
+  ansible.builtin.apt:
+    name: gawk
+  become: true
+
 - name: Create /etc/ansible/facts.d/
   ansible.builtin.file:
     path: /etc/ansible/facts.d/

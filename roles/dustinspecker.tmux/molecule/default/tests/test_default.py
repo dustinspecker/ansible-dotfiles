@@ -17,6 +17,10 @@ def test_tmp_tmux_cleaned_up(host):
     assert not host.file('/tmp/tmux-%s' % tmux_version).exists
 
 
+def test_gawk_installed(host):
+    assert host.package('gawk').is_installed
+
+
 def test_xsel_installed(host):
     assert host.package('xsel').is_installed
 
