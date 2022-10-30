@@ -2,3 +2,4 @@
 # vars file for packages_system
 bat_version: 0.22.1
 fd_version: 8.4.0
+shellcheck_version: 0.8.0

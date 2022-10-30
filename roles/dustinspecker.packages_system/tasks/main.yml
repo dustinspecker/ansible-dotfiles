@@ -20,3 +20,13 @@
   ansible.builtin.apt:
     deb: https://github.com/sharkdp/fd/releases/download/v{{ fd_version }}/fd_{{ fd_version }}_amd64.deb
   become: true
+
+- name: Install shellcheck via tar from github release
+  ansible.builtin.unarchive:
+    dest: /usr/local/bin
+    extra_opts:
+      - '--strip-components=1'
+      - shellcheck-v{{ shellcheck_version }}/shellcheck
+    remote_src: true
+    src: https://github.com/koalaman/shellcheck/releases/download/v{{ shellcheck_version }}/shellcheck-v{{ shellcheck_version }}.linux.x86_64.tar.xz
+  become: true

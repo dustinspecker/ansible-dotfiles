@@ -7,6 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 bat_version = '0.22.1'
 fd_version = '8.4.0'
+shellcheck_version = '0.8.0'
 
 
 def test_packages_are_installed(host):
@@ -25,3 +26,18 @@ def test_packages_are_installed(host):
         else:
             assert host.package(package['name']).is_installed
             assert host.package(package['name']).version == package['version']
+
+
+def test_executables_are_installed(host):
+    executables = [
+        {
+            'name': 'shellcheck',
+            'test_cmd': 'shellcheck --version',
+            'expected_version_output': 'version: 0.8.0'
+        }
+    ]
+
+    for executable in executables:
+        test_cmd = executable['test_cmd']
+        expected_version_output = executable['expected_version_output']
+        assert expected_version_output in host.check_output(test_cmd)
