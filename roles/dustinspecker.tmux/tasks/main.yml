@@ -15,7 +15,7 @@
 - name: Clone tmux package manager
   ansible.builtin.git:
     dest: ~/.tmux/plugins/tpm
-    repo: https://ansible.builtin.github.com/tmux-plugins/tpm
+    repo: https://github.com/tmux-plugins/tpm
     version: "v{{ tpm_version }}"
 
 - name: Copy .tmux.conf to ~ directory
