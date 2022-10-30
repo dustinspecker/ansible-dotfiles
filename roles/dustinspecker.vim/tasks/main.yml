@@ -1,7 +1,18 @@
 ---
-- name: Run tasks for Ubuntu
-  ansible.builtin.import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
+- name: Install gnupg2 so git ppa can be added
+  ansible.builtin.apt:
+    name:
+      - gnupg2
+  become: true
+
+- name: Install vim via ansible.builtin.apt
+  ansible.builtin.apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - vim=*
+      - vim-gui-common=*
+  become: true
 
 - name: Copy .vimrc to ~ directory
   ansible.builtin.copy:

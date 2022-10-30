@@ -1,7 +1,8 @@
 ---
-- name: Run tasks for Ubuntu
-  ansible.builtin.import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
+- name: Install zsh via ansible.builtin.apt
+  ansible.builtin.apt:
+    name: zsh=*
+  become: true
 
 - name: Create ~/.zfunctions directory
   ansible.builtin.file:

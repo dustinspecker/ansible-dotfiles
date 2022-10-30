@@ -1,4 +1,22 @@
 ---
-- name: Run tasks for Ubuntu
-  ansible.builtin.import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
+- name: Install packages via ansible.builtin.apt
+  ansible.builtin.apt:
+    name:
+      - httpie
+      - jq
+      - silversearcher-ag
+      - tree
+      # otherwise install bat's .deb results in error "There is no member named control"
+      # https://github.com/geerlingguy/docker-ubuntu1804-ansible/issues/7
+      - xz-utils
+  become: true
+
+- name: Install bat via .deb from github release
+  ansible.builtin.apt:
+    deb: https://github.com/sharkdp/bat/releases/download/v{{ bat_version }}/bat_{{ bat_version }}_amd64.deb
+  become: true
+
+- name: Install fd via .deb from github release
+  ansible.builtin.apt:
+    deb: https://github.com/sharkdp/fd/releases/download/v{{ fd_version }}/fd_{{ fd_version }}_amd64.deb
+  become: true

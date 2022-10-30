@@ -1,4 +1,30 @@
 ---
-- name: Run tasks for Ubuntu
-  ansible.builtin.import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
+- name: Previous Hub version
+  ansible.builtin.debug:
+    msg: "Hub version: {{ ansible_local.hub.INSTALLED_hub_version | default('None') }}"
+
+- name: Download and extract hub to /usr/local/bin/hub
+  ansible.builtin.unarchive:
+    dest: /usr/local/bin
+    extra_opts:
+      - '--strip-components=2'
+      - hub-linux-amd64-{{ hub_version }}/bin/hub
+    remote_src: true
+    src: https://github.com/github/hub/releases/download/v{{ hub_version }}/hub-linux-amd64-{{ hub_version }}.tgz
+  become: true
+  when: ansible_local.hub.INSTALLED_hub_version|default('None') != hub_version
+
+- name: Create /etc/ansible/facts.d/
+  ansible.builtin.file:
+    path: /etc/ansible/facts.d/
+    state: directory
+    mode: '0755'
+  become: true
+
+- name: Update hub version fact
+  ansible.builtin.template:
+    dest: /etc/ansible/facts.d/hub.fact
+    force: true
+    mode: 0755
+    src: hub.fact.j2
+  become: true

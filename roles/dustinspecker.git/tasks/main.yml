@@ -1,7 +1,24 @@
 ---
-- name: Run tasks for Ubuntu
-  ansible.builtin.import_tasks: debian.yml
-  when: ansible_os_family == 'Debian'
+- name: Install gnupg2 so git ppa can be added
+  ansible.builtin.apt:
+    name:
+      - gnupg2
+  become: true
+
+- name: Add git ppa to install latest git
+  ansible.builtin.apt_repository:
+    filename: git
+    repo: ppa:git-core/ppa
+    codename: "{{ ansible_facts.lsb.codename }}"
+  become: true
+
+- name: Install git, gitk, and tig via apt
+  ansible.builtin.apt:
+    name:
+      - git
+      - gitk
+      - tig
+  become: true
 
 - name: Copy .gitconfig to ~ directory
   ansible.builtin.copy:
