@@ -12,14 +12,14 @@
     fi
   args:
     executable: /bin/bash
-  register: go_version
+  register: installed_go_version
   changed_when: false
 
 - name: Delete previous version of go to prevent corrupt go installation
   ansible.builtin.file:
     path: /usr/local/go
     state: absent
-  when: go_version.stdout|default('None') != go_version|quote
+  when: installed_go_version.stdout|default('None') != go_version|quote
   become: true
 
 - name: Download and extract go to /usr/local/go
@@ -27,5 +27,5 @@
     dest: /usr/local/
     remote_src: true
     src: https://dl.google.com/go/go{{ go_version }}.{{ ansible_system }}-amd64.tar.gz
-  when: go_version.stdout|default('None') != go_version|quote
+  when: installed_go_version.stdout|default('None') != go_version|quote
   become: true
