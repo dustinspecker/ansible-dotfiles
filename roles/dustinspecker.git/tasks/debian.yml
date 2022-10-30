@@ -12,9 +12,10 @@
     codename: "{{ ansible_facts.lsb.codename }}"
   become: true
 
-- name: Install git and gitk via apt
+- name: Install git, gitk, and tig via apt
   ansible.builtin.apt:
     name:
       - git
       - gitk
+      - tig
   become: true

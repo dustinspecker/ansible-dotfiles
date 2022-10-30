@@ -13,6 +13,7 @@ def test_git_apt_repo_setup(host):
 def test_git_installed(host):
     assert host.package('git').is_installed
     assert host.package('gitk').is_installed
+    assert host.package('tig').is_installed
 
 
 def test_gitconfig_copied(host):
