@@ -5,17 +5,17 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
-FZF_VERSION = '0.30.0'
+fzf_version = '0.30.0'
 
 
 def test_fzf_cloned_and_checked_out_tag(host):
     cmd = 'git -C ~/.fzf describe --exact-match HEAD'
-    assert host.check_output(cmd) == FZF_VERSION
+    assert host.check_output(cmd) == fzf_version
 
 
 def test_fzf_bin_installed(host):
     cmd = "/home/ubuntu/.fzf/bin/fzf --version | awk '{ print $1 }'"
-    assert host.check_output(cmd) == FZF_VERSION
+    assert host.check_output(cmd) == fzf_version
 
 
 def test_fzf_completions_downloaded(host):

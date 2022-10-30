@@ -1,19 +1,19 @@
 ---
 - name: Install gnupg2 so git ppa can be added
-  apt:
+  ansible.builtin.apt:
     name:
       - gnupg2
   become: true
 
 - name: Add git ppa to install latest git
-  apt_repository:
+  ansible.builtin.apt_repository:
     filename: git
     repo: ppa:git-core/ppa
     codename: "{{ ansible_facts.lsb.codename }}"
   become: true
 
 - name: Install git and gitk via apt
-  apt:
+  ansible.builtin.apt:
     name:
       - git
       - gitk

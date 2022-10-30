@@ -1,6 +1,6 @@
 ---
-- name: Install packages via apt
-  apt:
+- name: Install packages via ansible.builtin.apt
+  ansible.builtin.apt:
     name:
       - httpie
       - jq
@@ -12,11 +12,11 @@
   become: true
 
 - name: Install bat via .deb from github release
-  apt:
-    deb: https://github.com/sharkdp/bat/releases/download/v{{ BAT_VERSION }}/bat_{{ BAT_VERSION }}_amd64.deb
+  ansible.builtin.apt:
+    deb: https://github.com/sharkdp/bat/releases/download/v{{ bat_version }}/bat_{{ bat_version }}_amd64.deb
   become: true
 
 - name: Install fd via .deb from github release
-  apt:
-    deb: https://github.com/sharkdp/fd/releases/download/v{{ FD_VERSION }}/fd_{{ FD_VERSION }}_amd64.deb
+  ansible.builtin.apt:
+    deb: https://github.com/sharkdp/fd/releases/download/v{{ fd_version }}/fd_{{ fd_version }}_amd64.deb
   become: true

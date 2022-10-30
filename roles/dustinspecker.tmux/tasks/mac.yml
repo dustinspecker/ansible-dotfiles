@@ -1,10 +1,10 @@
 ---
 - name: Install tmux via brew  # noqa 403
-  homebrew:
+  community.general.packaging.os.homebrew:
     name: tmux
     state: latest
 
 - name: Install reattach-to-user-namespace so tmux-yank works  # noqa 403
-  homebrew:
+  community.general.packaging.os.homebrew:
     name: reattach-to-user-namespace
     state: latest

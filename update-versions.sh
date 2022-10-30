@@ -18,13 +18,10 @@ update_version() {
   local vars_file="$4"
   local test_file="$5"
 
-  local upper_repo_name
-  upper_repo_name="$(echo "$repo_name" | tr '[:lower:]' '[:upper:]')"
-
   latest_version=$(http "$url"| jq -crM "$jqFilter" | sed 's/^v//')
 
-  sed -Ei.bak "s/(${upper_repo_name}_VERSION: ).*/\1$latest_version/g" "$vars_file"
-  sed -Ei.bak "s/(${upper_repo_name}_VERSION = ').*/\1$latest_version'/g" "$test_file"
+  sed -Ei.bak "s/(${repo_name}_version: ).*/\1$latest_version/g" "$vars_file"
+  sed -Ei.bak "s/(${repo_name}_version = ').*/\1$latest_version'/g" "$test_file"
 
   role=$(echo "$vars_file" | awk -F/ '{ print $2 }' | sed 's/dustinspecker\.//')
 

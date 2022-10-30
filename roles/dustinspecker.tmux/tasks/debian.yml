@@ -1,10 +1,10 @@
 ---
 - name: Previous tmux version
-  debug:
-    msg: "tmux version: {{ ansible_local.tmux.INSTALLED_TMUX_VERSION|default('None') }}"
+  ansible.builtin.debug:
+    msg: "tmux version: {{ ansible_local.tmux.INSTALLED_tmux_version | default('None') }}"
 
-- name: Install tmux build deps via apt
-  apt:
+- name: Install tmux build deps via ansible.builtin.apt
+  ansible.builtin.apt:
     name:
       - libevent-dev
       - libncurses-dev
@@ -13,50 +13,50 @@
       - build-essential
   become: true
 
-- name: Download tmux {{ TMUX_VERSION }} to /tmp/tmux
-  unarchive:
+- name: Download tmux to /tmp/tmux
+  ansible.builtin.unarchive:
     dest: /tmp
     remote_src: true
-    src: https://github.com/tmux/tmux/releases/download/{{ TMUX_VERSION }}/tmux-{{ TMUX_VERSION }}.tar.gz
-  when: ansible_local.tmux.INSTALLED_TMUX_VERSION|default('None') != TMUX_VERSION|string
+    src: https://github.com/tmux/tmux/releases/download/{{ tmux_version }}/tmux-{{ tmux_version }}.tar.gz
+  when: ansible_local.tmux.INSTALLED_tmux_version|default('None') != tmux_version|string
 
-- name: Run /tmp/tmux-{{ TMUX_VERSION }}/configure
-  command: sh ./configure
+- name: Run /tmp/tmux-*/configure
+  ansible.builtin.command: sh ./configure
   args:
-    chdir: /tmp/tmux-{{ TMUX_VERSION }}
-  when: ansible_local.tmux.INSTALLED_TMUX_VERSION|default('None') != TMUX_VERSION|string
+    chdir: /tmp/tmux-{{ tmux_version }}
+  when: ansible_local.tmux.INSTALLED_tmux_version|default('None') != tmux_version|string
 
-- name: Run make in /tmp/tmux-{{ TMUX_VERSION }}
-  make:
-    chdir: /tmp/tmux-{{ TMUX_VERSION }}
-  when: ansible_local.tmux.INSTALLED_TMUX_VERSION|default('None') != TMUX_VERSION|string
+- name: Run community.general.system.make in /tmp/tmux-{{ tmux_version }}
+  community.general.system.make:
+    chdir: /tmp/tmux-{{ tmux_version }}
+  when: ansible_local.tmux.INSTALLED_tmux_version|default('None') != tmux_version|string
 
-- name: Run make install to install tmux
-  make:
-    chdir: /tmp/tmux-{{ TMUX_VERSION }}
+- name: Run community.general.system.make install to install tmux
+  community.general.system.make:
+    chdir: /tmp/tmux-{{ tmux_version }}
     target: install
   become: true
-  when: ansible_local.tmux.INSTALLED_TMUX_VERSION|default('None') != TMUX_VERSION|string
+  when: ansible_local.tmux.INSTALLED_tmux_version|default('None') != tmux_version|string
 
-- name: Cleanup /tmp/tmux-{{ TMUX_VERSION }}
-  file:
-    path: /tmp/tmux-{{ TMUX_VERSION }}/
+- name: Cleanup /tmp/tmux-{{ tmux_version }}
+  ansible.builtin.file:
+    path: /tmp/tmux-{{ tmux_version }}/
     state: absent
 
 - name: Install xsel so tmux-yank works
-  apt:
+  ansible.builtin.apt:
     name: xsel=*
   become: true
 
 - name: Create /etc/ansible/facts.d/
-  file:
+  ansible.builtin.file:
     path: /etc/ansible/facts.d/
     state: directory
     mode: '0755'
   become: true
 
 - name: Update tmux version fact
-  template:
+  ansible.builtin.template:
     dest: /etc/ansible/facts.d/tmux.fact
     force: true
     mode: 0755

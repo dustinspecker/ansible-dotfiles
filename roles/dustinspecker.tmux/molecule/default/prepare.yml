@@ -3,4 +3,4 @@
   hosts: all
   roles:
     - role: dustinspecker.tmux
-      TMUX_VERSION: 2.7
+      tmux_version: 2.7

@@ -1,9 +1,10 @@
 ---
-- import_tasks: mac.yml
+- name: Run tasks for Mac
+  ansible.builtin.import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
 
 - name: Previous go version
-  shell: |
+  ansible.builtin.shell: |
     set -o pipefail
 
     if command -v /usr/local/go/bin/go > /dev/null ; then
@@ -15,16 +16,16 @@
   changed_when: false
 
 - name: Delete previous version of go to prevent corrupt go installation
-  file:
+  ansible.builtin.file:
     path: /usr/local/go
     state: absent
-  when: go_version.stdout|default('None') != GO_VERSION|quote
+  when: go_version.stdout|default('None') != go_version|quote
   become: true
 
 - name: Download and extract go to /usr/local/go
-  unarchive:
+  ansible.builtin.unarchive:
     dest: /usr/local/
     remote_src: true
-    src: https://dl.google.com/go/go{{ GO_VERSION }}.{{ ansible_system }}-amd64.tar.gz
-  when: go_version.stdout|default('None') != GO_VERSION|quote
+    src: https://dl.google.com/go/go{{ go_version }}.{{ ansible_system }}-amd64.tar.gz
+  when: go_version.stdout|default('None') != go_version|quote
   become: true

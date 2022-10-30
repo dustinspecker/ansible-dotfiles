@@ -1,5 +1,5 @@
 ---
 - name: Install gnu-tar via brew  # noqa 403
-  homebrew:
+  community.general.packaging.os.homebrew:
     name: gnu-tar
     state: latest

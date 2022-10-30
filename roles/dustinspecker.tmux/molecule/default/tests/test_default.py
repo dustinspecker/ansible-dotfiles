@@ -5,16 +5,16 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
-TMUX_VERSION = '3.3a'
-TPM_VERSION = '3.0.0'
+tmux_version = '3.3a'
+tpm_version = '3.0.0'
 
 
 def test_tmux_installed(host):
-    assert host.check_output('tmux -V') == 'tmux %s' % TMUX_VERSION
+    assert host.check_output('tmux -V') == 'tmux %s' % tmux_version
 
 
 def test_tmp_tmux_cleaned_up(host):
-    assert not host.file('/tmp/tmux-%s' % TMUX_VERSION).exists
+    assert not host.file('/tmp/tmux-%s' % tmux_version).exists
 
 
 def test_xsel_installed(host):
@@ -27,7 +27,7 @@ def test_tmux_conf_copied(host):
 
 def test_tmux_package_manager_installed(host):
     cmd = 'git -C ~/.tmux/plugins/tpm describe --exact-match HEAD'
-    assert host.check_output(cmd) == 'v%s' % TPM_VERSION
+    assert host.check_output(cmd) == 'v%s' % tpm_version
 
 
 def test_tmux_plugins_installed(host):

@@ -1,3 +1,3 @@
 ---
 - name: Install vim plugins
-  command: vim +PlugInstall +PlugClean +qa
+  ansible.builtin.command: vim +PlugInstall +PlugClean +qa

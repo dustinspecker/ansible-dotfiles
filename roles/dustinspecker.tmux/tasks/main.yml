@@ -1,23 +1,25 @@
 ---
-- import_tasks: mac.yml
+- name: Run tasks for Mac
+  ansible.builtin.import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
-- import_tasks: debian.yml
+- name: Run tasks for Ubuntu
+  ansible.builtin.import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Create ~/.tmux/plugins directory
-  file:
+  ansible.builtin.file:
     path: ~/.tmux/plugins
     state: directory
     mode: '0755'
 
 - name: Clone tmux package manager
-  git:
+  ansible.builtin.git:
     dest: ~/.tmux/plugins/tpm
-    repo: https://github.com/tmux-plugins/tpm
-    version: "v{{ TPM_VERSION }}"
+    repo: https://ansible.builtin.github.com/tmux-plugins/tpm
+    version: "v{{ tpm_version }}"
 
 - name: Copy .tmux.conf to ~ directory
-  copy:
+  ansible.builtin.copy:
     backup: true
     dest: ~/.tmux.conf
     src: tmux.conf

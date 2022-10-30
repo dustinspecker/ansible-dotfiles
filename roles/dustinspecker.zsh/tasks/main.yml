@@ -1,71 +1,77 @@
 ---
-- import_tasks: mac.yml
+- name: Run tasks for Mac
+  ansible.builtin.import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
-- import_tasks: debian.yml
+- name: Run tasks for Ubuntu
+  ansible.builtin.import_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
 - name: Create ~/.zfunctions directory
-  file:
+  ansible.builtin.file:
     path: ~/.zfunctions
     state: directory
     mode: '0755'
 
 - name: Install prompt_pure_setup zfunction
-  get_url:
+  ansible.builtin.get_url:
     dest: ~/.zfunctions/prompt_pure_setup
+    mode: '0644'
     url: https://raw.githubusercontent.com/sindresorhus/pure/v1.18.0/pure.zsh
     checksum: sha256:6d1d85f7f7f38d8c1299eea4fd65e5cce933e0358aee53a3eb0e8703cfa76b63
 
 - name: Install async zfunction
-  get_url:
+  ansible.builtin.get_url:
     dest: ~/.zfunctions/async
+    mode: '0644'
     url: https://raw.githubusercontent.com/sindresorhus/pure/v1.18.0/async.zsh
     checksum: sha256:c9c199305a4972c5c72e63026d540ea93deed2ece6cd83cfdb057c864ed9edeb
 
 - name: Create ~/.zscripts directory
-  file:
+  ansible.builtin.file:
     path: ~/.zscripts
     state: directory
     mode: '0755'
 
 - name: Install z tool
-  get_url:
+  ansible.builtin.get_url:
     dest: ~/.zscripts/z.sh
+    mode: '0644'
     url: https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
     checksum: sha256:f24e0791ba10f6a8301461da3fc50333eee2e009a19e5d0e9f3661f0d0446767
 
 - name: Clone zsh-syntax-highlighting
-  git:
+  ansible.builtin.git:
     dest: ~/.zscripts/zsh-syntax-highlighting
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
     version: 0.7.1
 
 - name: Clone zsh-autosuggestions
-  git:
+  ansible.builtin.git:
     dest: ~/.zscripts/zsh-autosuggestions
     repo: https://github.com/zsh-users/zsh-autosuggestions
     version: v0.7.0
 
 - name: Copy zshrc ~/.zshrc
-  copy:
+  ansible.builtin.copy:
     backup: true
     dest: ~/.zshrc
     src: zshrc
     mode: '0644'
 
 - name: Change default shell to /bin/zsh
-  command: "chsh -s /bin/zsh {{ ansible_user_id }}"
+  ansible.builtin.command: "chsh -s /bin/zsh {{ ansible_user_id }}"
   become: true
   when: ansible_user_shell != '/bin/zsh'
 
 - name: Make .zcompletions directory
-  file:
+  ansible.builtin.file:
     path: ~/.zcompletions
     state: directory
     mode: '0755'
 
 - name: Download hub zsh completions
-  get_url:
+  ansible.builtin.get_url:
     dest: ~/.zcompletions/_hub
+    mode: '0644'
     url: https://raw.githubusercontent.com/github/hub/v2.14.2/etc/hub.zsh_completion
     checksum: sha256:bb9b297dd1a70a090404d55c62ccea147b1b9f2f23673dad4b6922faa1da164d

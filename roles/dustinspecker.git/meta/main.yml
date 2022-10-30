@@ -5,12 +5,11 @@ galaxy_info:
   role_name: git
   namespace: dustinspecker
   license: MIT
-  min_ansible_version: 1.2
+  min_ansible_version: "1.2"
   galaxy_tags:
     - git
   platforms:
     - name: Ubuntu
-      versions: all
-    - name: Darwin
-      versions: all
+      versions:
+        - all
 dependencies: []

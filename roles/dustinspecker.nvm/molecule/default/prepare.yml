@@ -3,5 +3,5 @@
   hosts: all
   roles:
     - role: dustinspecker.nvm
-      NODE_VERSION: 10.14.0
-      NVM_VERSION: 0.33.0
+      node_version: 10.14.0
+      nvm_version: 0.33.0

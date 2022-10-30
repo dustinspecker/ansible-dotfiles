@@ -3,4 +3,4 @@
   hosts: all
   roles:
     - role: dustinspecker.go
-      GO_VERSION: 1.12
+      go_version: 1.12

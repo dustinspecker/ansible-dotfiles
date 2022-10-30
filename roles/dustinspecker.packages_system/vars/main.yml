@@ -1,4 +1,4 @@
 ---
 # vars file for packages_system
-BAT_VERSION: 0.21.0
-FD_VERSION: 8.4.0
+bat_version: 0.21.0
+fd_version: 8.4.0

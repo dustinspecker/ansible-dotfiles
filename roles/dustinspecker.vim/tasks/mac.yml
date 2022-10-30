@@ -1,5 +1,5 @@
 ---
 - name: Install vim via brew  # noqa 403
-  homebrew:
+  community.general.packaging.os.homebrew:
     name: vim
     state: latest

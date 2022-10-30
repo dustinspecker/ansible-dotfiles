@@ -1,15 +1,16 @@
 ---
-- import_tasks: mac.yml
+- name: Run tasks for mac
+  ansible.builtin.import_tasks: mac.yml
   when: ansible_os_family == 'Darwin'
 
 - name: Clone fzf repository
-  git:
+  ansible.builtin.git:
     dest: ~/.fzf
     repo: https://github.com/junegunn/fzf
-    version: "{{ FZF_VERSION }}"
+    version: "{{ fzf_version }}"
 
 - name: Download and extract fzf to ~/.fzf/bin/fzf
-  unarchive:
+  ansible.builtin.unarchive:
     dest: ~/.fzf/bin/
     remote_src: true
-    src: https://github.com/junegunn/fzf/releases/download/{{ FZF_VERSION }}/fzf-{{ FZF_VERSION }}-{{ ansible_system | lower }}_amd64.tar.gz
+    src: https://github.com/junegunn/fzf/releases/download/{{ fzf_version }}/fzf-{{ fzf_version }}-{{ ansible_system | lower }}_amd64.tar.gz

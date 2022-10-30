@@ -1,55 +1,56 @@
 ---
 - name: Previous nvm version
-  debug:
-    msg: "nvm version: {{ ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') }}"
+  ansible.builtin.debug:
+    msg: "nvm version: {{ ansible_local.nvm.INSTALLED_nvm_version | default('None') }}"
 
 - name: Download nvm install script to /tmp
-  get_url:
+  ansible.builtin.get_url:
     dest: /tmp/nvm-install.sh
-    url: https://raw.githubusercontent.com/creationix/nvm/v{{ NVM_VERSION }}/install.sh
-  when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
+    mode: '0644'
+    url: https://raw.githubusercontent.com/creationix/nvm/v{{ nvm_version }}/install.sh
+  when: ansible_local.nvm.INSTALLED_nvm_version|default('None') != nvm_version
 
-- name: Install nvm {{ NVM_VERSION }}
-  command: bash /tmp/nvm-install.sh
-  when: ansible_local.nvm.INSTALLED_NVM_VERSION|default('None') != NVM_VERSION
+- name: Install nvm {{ nvm_version }}
+  ansible.builtin.command: bash /tmp/nvm-install.sh
+  when: ansible_local.nvm.INSTALLED_nvm_version|default('None') != nvm_version
 
 - name: Cleanup /tmp/nvm-install.sh
-  file:
+  ansible.builtin.file:
     path: /tmp/nvm-install.sh
     state: absent
 
 - name: Setup default global packages
-  copy:
+  ansible.builtin.copy:
     backup: true
     dest: ~/.nvm/default-packages
     force: true
     mode: '0644'
     src: default-packages
 
-- name: Check if node {{ NODE_VERSION }} is installed
-  find:
+- name: Check if node is installed
+  ansible.builtin.find:
     file_type: directory
     paths: ~/.nvm/versions/node/
-    pattern: 'v{{ NODE_VERSION }}'
+    pattern: 'v{{ node_version }}'
   register: node_versions
 
-- name: Install Node {{ NODE_VERSION }}
-  command: bash -c "source ~/.nvm/nvm.sh && nvm install {{ NODE_VERSION }}"
+- name: Install Node {{ node_version }}
+  ansible.builtin.command: bash -c "source ~/.nvm/nvm.sh && nvm install {{ node_version }}"
   when: node_versions.matched == 0
 
-- name: Switch default to Node {{ NODE_VERSION }}
-  command: bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ NODE_VERSION }}"
+- name: Switch default to Node {{ node_version }}
+  ansible.builtin.command: bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ node_version }}"
   when: node_versions.matched == 0
 
 - name: Create /etc/ansible/facts.d/
-  file:
+  ansible.builtin.file:
     path: /etc/ansible/facts.d/
     mode: '0755'
     state: directory
   become: true
 
 - name: Create /etc/ansible/facts.d/nvm.fact
-  template:
+  ansible.builtin.template:
     dest: /etc/ansible/facts.d/nvm.fact
     mode: 0755
     src: nvm.fact.j2

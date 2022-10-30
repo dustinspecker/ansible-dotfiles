@@ -1,12 +1,12 @@
 ---
 - name: Install gnupg2 so git ppa can be added
-  apt:
+  ansible.builtin.apt:
     name:
       - gnupg2
   become: true
 
-- name: Install vim via apt
-  apt:
+- name: Install vim via ansible.builtin.apt
+  ansible.builtin.apt:
     name: "{{ packages }}"
   vars:
     packages:
