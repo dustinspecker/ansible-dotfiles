@@ -6,8 +6,6 @@ Installs system packages via apt (Debian) or brew (Mac).
 Requirements
 ------------
 
-On Mac, it is expected that homebrew has been installed.
-
 Role Variables
 --------------
 

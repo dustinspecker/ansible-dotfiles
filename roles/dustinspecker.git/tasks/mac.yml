@@ -1,6 +1,0 @@
----
-# gitk is included with git via brew
-- name: Install git via brew  # noqa 403
-  community.general.packaging.os.homebrew:
-    name: git
-    state: latest

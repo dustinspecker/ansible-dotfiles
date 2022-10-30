@@ -1,5 +1,0 @@
----
-- name: Install zsh via brew  # noqa 403
-  community.general.packaging.os.homebrew:
-    name: zsh
-    state: latest

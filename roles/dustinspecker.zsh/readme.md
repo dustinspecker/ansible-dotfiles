@@ -8,8 +8,6 @@ Requirements
 
 Git must be installed for zsh-syntax-highlighting to be installed.
 
-On Mac, it is expected for homebrew to be installed.
-
 Role Variables
 --------------
 

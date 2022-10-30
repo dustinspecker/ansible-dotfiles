@@ -15,7 +15,6 @@ This will install `ansible`, fetch this repository, and execute the playbook.
 ## Manual Usage
 
 1. Install `ansible-playbook`
-   - [Mac](https://hvops.com/articles/ansible-mac-osx/)
    - [Ubuntu](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-apt-ubuntu)
 1. Clone this git repository
 1. Navigate to the cloned repository

@@ -8,8 +8,6 @@ Requirements
 
 Git is required for vim-plug to install plugins.
 
-On Mac, it is expected that homebrew has been installed.
-
 Role Variables
 --------------
 

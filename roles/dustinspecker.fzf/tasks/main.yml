@@ -1,8 +1,4 @@
 ---
-- name: Run tasks for mac
-  ansible.builtin.import_tasks: mac.yml
-  when: ansible_os_family == 'Darwin'
-
 - name: Clone fzf repository
   ansible.builtin.git:
     dest: ~/.fzf

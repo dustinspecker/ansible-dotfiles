@@ -6,8 +6,6 @@ Installs and configures Tmux with TPM.
 Requirements
 ------------
 
-On Mac, it is expected that homebrew has been installed.
-
 Role Variables
 --------------
 

@@ -1,8 +1,4 @@
 ---
-- name: Run tasks for Mac
-  ansible.builtin.import_tasks: mac.yml
-  when: ansible_os_family == 'Darwin'
-
 - name: Previous go version
   ansible.builtin.shell: |
     set -o pipefail

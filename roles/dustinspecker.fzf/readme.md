@@ -8,8 +8,6 @@ Requirements
 
 Git must be installed.
 
-On Mac, it is expected that homebrew has been installed.
-
 Role Variables
 --------------
 
