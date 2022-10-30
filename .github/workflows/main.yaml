@@ -17,7 +17,7 @@ jobs:
           - vim
           - zsh
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
         with:
           fetch-depth: 0
       - env:
