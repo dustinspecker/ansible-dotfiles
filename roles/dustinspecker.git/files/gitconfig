@@ -63,3 +63,5 @@
   tool = vimdiff
 [init]
   defaultBranch = main
+[submodule]
+	recurse = true
