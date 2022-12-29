@@ -25,6 +25,10 @@ def test_xsel_installed(host):
     assert host.package('xsel').is_installed
 
 
+def test_xdg_utils_installed(host):
+    assert host.package('xdg-utils').is_installed
+
+
 def test_tmux_conf_copied(host):
     assert host.file('/home/ubuntu/.tmux.conf').exists
 

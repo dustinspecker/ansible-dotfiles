@@ -11,6 +11,7 @@
       - pkg-config
       - gcc
       - build-essential
+      - xdg-utils
   become: true
 
 - name: Download tmux to /tmp/tmux
