@@ -6,6 +6,7 @@
 - name: Install tmux build deps via ansible.builtin.apt
   ansible.builtin.apt:
     name:
+      - bison
       - libevent-dev
       - libncurses-dev
       - pkg-config
