@@ -145,6 +145,30 @@
       "depNameTemplate": "tmux/tmux",
     },
   ],
+  "packageRules": [
+    {
+      "groupName": "packages_system",
+      "matchPackageNames": [
+        "koalaman/shellcheck",
+        "sharkdp/bat",
+        "sharkdp/fd",
+      ],
+    },
+    {
+      "groupName": "nodejs",
+      "matchPackageNames": [
+        "nodejs/node",
+        "nvm-sh/nvm",
+      ],
+    },
+    {
+      "groupName": "tmux",
+      "matchPackageNames": [
+        "tmux/tmux",
+        "tmux-plugins/tpm",
+      ],
+    },
+  ],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
 }
