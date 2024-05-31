@@ -7,7 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 bat_version = '0.22.1'
 fd_version = '8.4.0'
-shellcheck_version = '0.8.0'
+shellcheck_version = '0.10.0'
 
 
 def test_packages_are_installed(host):
