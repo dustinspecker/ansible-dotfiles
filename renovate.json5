@@ -123,4 +123,6 @@
       "depNameTemplate": "tmux/tmux",
     },
   ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
 }
