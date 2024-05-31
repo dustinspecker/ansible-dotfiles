@@ -10,6 +10,7 @@
       ],
       "matchStrings": [
         "bat_version: (?<currentValue>.*)",
+        "bat_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "sharkdp/bat",
@@ -23,6 +24,7 @@
       ],
       "matchStrings": [
         "fd_version: (?<currentValue>.*)",
+        "fd_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "sharkdp/fd",
@@ -36,6 +38,7 @@
       ],
       "matchStrings": [
         "fzf_version: (?<currentValue>.*)",
+        "fzf_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "junegunn/fzf",
@@ -49,6 +52,7 @@
       ],
       "matchStrings": [
         "go_version: (?<currentValue>.*)",
+        "go_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "golang-version",
       "depNameTemplate": "golang",
@@ -63,6 +67,7 @@
       ],
       "matchStrings": [
         "hub_version: (?<currentValue>.*)",
+        "hub_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "github/hub",
@@ -76,6 +81,7 @@
       ],
       "matchStrings": [
         "node_version: (?<currentValue>.*)",
+        "node_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "nodejs/node",
@@ -89,6 +95,7 @@
       ],
       "matchStrings": [
         "nvm_version: (?<currentValue>.*)",
+        "nvm_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "nvm-sh/nvm",
@@ -102,6 +109,7 @@
       ],
       "matchStrings": [
         "shellcheck_version: (?<currentValue>.*)",
+        "shellcheck_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "koalaman/shellcheck",
@@ -115,6 +123,7 @@
       ],
       "matchStrings": [
         "tpm_version: (?<currentValue>.*)",
+        "tpm_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "tmux-plugins/tpm",
@@ -128,6 +137,7 @@
       ],
       "matchStrings": [
         "tmux_version: (?<currentValue>.*)",
+        "tmux_version = '(?<currentValue>.*)'",
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "tmux/tmux",
