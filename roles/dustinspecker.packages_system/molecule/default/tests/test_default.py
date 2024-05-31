@@ -33,7 +33,7 @@ def test_executables_are_installed(host):
         {
             'name': 'shellcheck',
             'test_cmd': 'shellcheck --version',
-            'expected_version_output': 'version: 0.8.0'
+            'expected_version_output': 'version: %s' % (shellcheck_version)
         }
     ]
 
