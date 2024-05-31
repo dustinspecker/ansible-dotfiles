@@ -1,0 +1,126 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      // bat
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.packages_system/vars/main.yml",
+      ],
+      "matchStrings": [
+        "bat_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "sharkdp/bat",
+    },
+    {
+      // fd
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.packages_system/vars/main.yml",
+      ],
+      "matchStrings": [
+        "fd_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "sharkdp/fd",
+    },
+    {
+      // fzf
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.fzf/vars/main.yml",
+      ],
+      "matchStrings": [
+        "fzf_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "junegunn/fzf",
+    },
+    {
+      // go
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.go/vars/main.yml",
+      ],
+      "matchStrings": [
+        "go_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "golang-version",
+      "depNameTemplate": "golang",
+      "versioningTemplate": "go-mod-directive",
+    },
+    {
+      // hub
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.hub/vars/main.yml",
+      ],
+      "matchStrings": [
+        "hub_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "github/hub",
+    },
+    {
+      // node
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.nvm/vars/main.yml",
+      ],
+      "matchStrings": [
+        "node_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "nodejs/node",
+    },
+    {
+      // nvm
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.nvm/vars/main.yml",
+      ],
+      "matchStrings": [
+        "nvm_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "nvm-sh/nvm",
+    },
+    {
+      // shellcheck
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.packages_system/vars/main.yml",
+      ],
+      "matchStrings": [
+        "shellcheck_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "koalaman/shellcheck",
+    },
+    {
+      // tpm
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.tmux/vars/main.yml",
+      ],
+      "matchStrings": [
+        "tpm_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "tmux-plugins/tpm",
+    },
+    {
+      // tmux
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.tmux/vars/main.yml",
+      ],
+      "matchStrings": [
+        "tmux_version: (?<currentValue>.*)",
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "tmux/tmux",
+    },
+  ],
+}
