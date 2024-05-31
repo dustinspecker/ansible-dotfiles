@@ -5,7 +5,7 @@ import testinfra.utils.ansible_runner
 testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
-tmux_version = '3.3a'
+tmux_version = '3.4'
 tpm_version = '3.0.0'
 
 

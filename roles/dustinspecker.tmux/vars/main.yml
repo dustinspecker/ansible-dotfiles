@@ -1,4 +1,4 @@
 ---
 # vars file for tmux
-tmux_version: 3.3a
+tmux_version: 3.4
 tpm_version: 3.0.0
