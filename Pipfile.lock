@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "324d97d416b0cc88320ec3bd76c0372153ed1ed3a04fa490b62cc9a3b75181d0"
+            "sha256": "aa3e5ff4c307736580f015a99702ba15d6ec03f1ef4d169b613e51ccb57c8b47"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -22,15 +22,17 @@
                 "sha256:7c0cdcd1121a5f12ab2da4bdd2e14c2c153e01214bfc6a6bc156b61bd7401c5b"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==6.5.0"
         },
         "ansible-compat": {
             "hashes": [
-                "sha256:7a012753a0a02dab2f22b0e574e3e7b00399f660606154474ffe25621fa80d3b",
-                "sha256:8857b317bf36a00dbb0b06640d19b68bb64f667bf2a5355189f3c5961f4b1c10"
+                "sha256:08deddcd0a1dc6baabe674b07c6ff882118492c123d281f56f01905271a7ffc4",
+                "sha256:77fd80841279d8b0664df61faab65c32275d1a2b0079f60bf30c3d44251f6301"
             ],
             "index": "pypi",
-            "version": "==2.2.1"
+            "markers": "python_version >= '3.8'",
+            "version": "==2.2.7"
         },
         "ansible-core": {
             "hashes": [
@@ -439,11 +441,12 @@
     "develop": {
         "ansible-compat": {
             "hashes": [
-                "sha256:7a012753a0a02dab2f22b0e574e3e7b00399f660606154474ffe25621fa80d3b",
-                "sha256:8857b317bf36a00dbb0b06640d19b68bb64f667bf2a5355189f3c5961f4b1c10"
+                "sha256:08deddcd0a1dc6baabe674b07c6ff882118492c123d281f56f01905271a7ffc4",
+                "sha256:77fd80841279d8b0664df61faab65c32275d1a2b0079f60bf30c3d44251f6301"
             ],
             "index": "pypi",
-            "version": "==2.2.1"
+            "markers": "python_version >= '3.8'",
+            "version": "==2.2.7"
         },
         "ansible-core": {
             "hashes": [
@@ -459,6 +462,7 @@
                 "sha256:b7c9afbda3da25e106ce648fb9846765237c672bacafd069f11bdaa85ece1648"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==6.8.4"
         },
         "arrow": {
@@ -687,7 +691,7 @@
                 "sha256:fd1abc0d89e30cc4e02e4064dc67fcc51bd941eb395c502aac3ec19fab46b519",
                 "sha256:ff8fa367d09b717b2a17a052544193ad76cd49979c805768879cb63d9ca50561"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_full_version >= '3.7.0'",
             "version": "==3.3.2"
         },
         "click": {
@@ -797,6 +801,7 @@
                 "sha256:7a1cf6b73744f5806ab95e526f6f0d8c01c66d7bbe349562d22dfca20610b248"
             ],
             "index": "pypi",
+            "markers": "python_full_version >= '3.6.1'",
             "version": "==5.0.4"
         },
         "idna": {
@@ -937,7 +942,7 @@
                 "sha256:437a0829c3273f542e0db09516ae743607e6a2eda4d8cbdfb407edda3e0facb2",
                 "sha256:aab00c1ba62a42d77edd1a51528dfbb46abca70df7c7147fda0925ee4fe7deda"
             ],
-            "index": "pypi",
+            "markers": "python_version >= '3.8'",
             "version": "==4.0.4"
         },
         "molecule-docker": {
@@ -953,6 +958,7 @@
                 "sha256:fc1e988147226ada8288475b768c52a37366c8b50d30b91635cacfc64e1468c3"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==1.0.0"
         },
         "mypy-extensions": {
@@ -1033,6 +1039,7 @@
                 "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.7'",
             "version": "==7.2.0"
         },
         "pytest-testinfra": {
@@ -1041,6 +1048,7 @@
                 "sha256:56ac1dfc61342632a1189091473e253db1a3cdcecce0d49d6a769f33cd264814"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3.6'",
             "version": "==6.8.0"
         },
         "python-dateutil": {
@@ -1152,7 +1160,7 @@
                 "sha256:4edbae314f59eb482f54e9e30bf00d33350aaa94f4bfcd4e9e3110e64d0d7222",
                 "sha256:9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432"
             ],
-            "markers": "python_version >= '3.7'",
+            "markers": "python_full_version >= '3.7.0'",
             "version": "==13.7.1"
         },
         "rpds-py": {
@@ -1329,7 +1337,7 @@
                 "sha256:2a88b337ac46ad0f06f557b2806c3df62421972f766673dd8bf26732fb75a9ea",
                 "sha256:ecf7add45c939e9dda682c390a2cd0a845c94a4793a2cce9e8870d4ee9501f99"
             ],
-            "markers": "sys_platform == 'linux'",
+            "markers": "python_version >= '3.9'",
             "version": "==0.3.0"
         },
         "six": {
