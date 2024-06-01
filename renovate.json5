@@ -106,10 +106,12 @@
       // shellcheck
       "customType": "regex",
       "fileMatch": [
+        "Makefile",
         "roles/dustinspecker.packages_system/molecule/default/tests/test_default.py",
         "roles/dustinspecker.packages_system/vars/main.yml",
       ],
       "matchStrings": [
+        "koalaman/shellcheck:v(?<currentValue>.*)",
         "shellcheck_version: (?<currentValue>.*)",
         "shellcheck_version = '(?<currentValue>.*)'",
       ],
