@@ -16,6 +16,6 @@ molecule-vagrant = "==2.0.0"
 ansible-lint = "==24.5.0"
 flake8 = "==7.0.0"
 pytest = "==7.4.4"
-pytest-testinfra = "==6.8.0"
+pytest-testinfra = "==10.1.1"
 requests = "==2.31.0"
 molecule-plugins = {version = "==23.5.3", extras = ["docker"]}
