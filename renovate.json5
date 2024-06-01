@@ -111,7 +111,7 @@
         "roles/dustinspecker.packages_system/vars/main.yml",
       ],
       "matchStrings": [
-        "koalaman/shellcheck:v(?<currentValue>.*)",
+        "koalaman/shellcheck:(?<currentValue>.*) ",
         "shellcheck_version: (?<currentValue>.*)",
         "shellcheck_version = '(?<currentValue>.*)'",
       ],
