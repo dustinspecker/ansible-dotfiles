@@ -7,7 +7,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-ansible = "==6.5.0"
+ansible = "==8.5.0"
 ansible-compat = "==2.2.1"
 
 [dev-packages]
