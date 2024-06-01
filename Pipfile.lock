@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "aa3e5ff4c307736580f015a99702ba15d6ec03f1ef4d169b613e51ccb57c8b47"
+            "sha256": "d80870b652f8ae40500bd7a5a3a90829b01d615572f08c6fef37924bb5fa6e38"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,12 +18,12 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:2cc8c9faf9351dc46d92281eb28f21be3d2faa212b20bfc05afa98946cb788de",
-                "sha256:7c0cdcd1121a5f12ab2da4bdd2e14c2c153e01214bfc6a6bc156b61bd7401c5b"
+                "sha256:2749032e26b0dbc9a694528b85fd89e7f950b8c7b53606f17dd997f23ac7cc88",
+                "sha256:327c509bdaf5cdb2489d85c09d2c107e9432f9874c8bb5c0702a731160915f2d"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==6.5.0"
+            "markers": "python_version >= '3.9'",
+            "version": "==8.5.0"
         },
         "ansible-compat": {
             "hashes": [
@@ -36,11 +36,11 @@
         },
         "ansible-core": {
             "hashes": [
-                "sha256:7ad2d8c0a5fa4a59de1809a5f96d2dbf511189c834116f5c72aec9730b51074b",
-                "sha256:f50220254b8e13a79b68e68e759f5bf89f3f3584c907737985a017c699b1c3b6"
+                "sha256:390edd603420122f7cb1c470d8d1f8bdbbd795a1844dd03c1917db21935aecb9",
+                "sha256:5fde82cd3928d9857ad880782c644f27d3168b0f25321d5a8d6befa524aa1818"
             ],
-            "markers": "python_version >= '3.8'",
-            "version": "==2.13.13"
+            "markers": "python_version >= '3.9'",
+            "version": "==2.15.12"
         },
         "attrs": {
             "hashes": [
@@ -319,10 +319,10 @@
         },
         "resolvelib": {
             "hashes": [
-                "sha256:c6ea56732e9fb6fca1b2acc2ccc68a0b6b8c566d8f3e78e0443310ede61dbd37",
-                "sha256:d9b7907f055c3b3a2cfc56c914ffd940122915826ff5fb5b1de0c99778f4de98"
+                "sha256:04ce76cbd63fded2078ce224785da6ecd42b9564b1390793f64ddecbe997b309",
+                "sha256:d2da45d1a8dfee81bdd591647783e340ef3bcb104b54c383f70d422ef5cc7dbf"
             ],
-            "version": "==0.8.1"
+            "version": "==1.0.1"
         },
         "rpds-py": {
             "hashes": [
