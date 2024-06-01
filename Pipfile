@@ -8,7 +8,7 @@ name = "pypi"
 
 [packages]
 ansible = "==9.6.0"
-ansible-compat = "==4.1.9"
+ansible-compat = "==24.6.0"
 
 [dev-packages]
 molecule = {version = "==24.2.1", extras = ["docker"]}
