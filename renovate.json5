@@ -146,6 +146,18 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "tmux/tmux",
     },
+    {
+      // Watch GitHub releases for Git repositories
+      // assumes Git reference is a tag
+      "customType": "regex",
+      "fileMatch": [
+        "roles/dustinspecker.zsh/tasks/main.yml",
+      ],
+      "matchStrings": [
+        "https:\/\/raw\.githubusercontent\.com\/(?<depName>([^\/]*\/){2})(?<currentValue>[^\/]*)",
+      ],
+      "datasourceTemplate": "github-releases",
+    },
   ],
   "packageRules": [
     {
