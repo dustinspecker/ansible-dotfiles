@@ -31,7 +31,7 @@
   p = push -u origin HEAD
   rc = rebase --continue
   remotes = remote -v
-  rhu = !sh -c 'git fetch && git reset --hard @{upstream}'
+  rhu = !sh -c 'git fetch --prune && git reset --hard @{upstream}'
   ri = !sh -c 'git rebase --interactive ${1:-$(git branch --points-at origin/HEAD --remotes | grep --invert-match --ignore-case HEAD)}' -
   ro = !sh -c 'git rebase --onto $1 $2 $(git rev-parse --abbrev-ref HEAD)' -
   rom = !sh -c 'git ro ${1:-$(git branch --points-at origin/HEAD --remotes | grep --invert-match --ignore-case HEAD)} $(git merge-base ${1:-$(git branch --points-at origin/HEAD --remotes | grep --invert-match --ignore-case HEAD)} HEAD)' -
