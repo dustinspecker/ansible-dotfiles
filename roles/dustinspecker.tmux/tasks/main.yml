@@ -29,12 +29,12 @@
   when: ansible_local.tmux.INSTALLED_tmux_version|default('None') != tmux_version|string
 
 - name: Run community.general.system.make in /tmp/tmux-{{ tmux_version }}
-  community.general.system.make:
+  community.general.make:
     chdir: /tmp/tmux-{{ tmux_version }}
   when: ansible_local.tmux.INSTALLED_tmux_version|default('None') != tmux_version|string
 
 - name: Run community.general.system.make install to install tmux
-  community.general.system.make:
+  community.general.make:
     chdir: /tmp/tmux-{{ tmux_version }}
     target: install
   become: true
