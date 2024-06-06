@@ -11,7 +11,7 @@ ansible = "==9.6.0"
 ansible-compat = "==24.6.0"
 
 [dev-packages]
-molecule = {version = "==24.2.1", extras = ["docker"]}
+molecule = {version = "==24.6.0", extras = ["docker"]}
 molecule-vagrant = "==2.0.0"
 ansible-lint = "==24.6.0"
 flake8 = "==7.0.0"
