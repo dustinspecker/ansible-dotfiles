@@ -58,6 +58,7 @@
       ],
       "datasourceTemplate": "golang-version",
       "depNameTemplate": "golang",
+      "versioningTemplate": "go-mod-directive",
     },
     {
       // hub
