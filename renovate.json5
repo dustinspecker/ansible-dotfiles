@@ -183,8 +183,8 @@
       ],
     },
     {
-      "matchDatasources": [
-        "golang-version",
+      "matchPackageNames": [
+        "golang",
       ],
       "rangeStrategy": "bump",
     },
