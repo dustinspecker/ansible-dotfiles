@@ -14,14 +14,14 @@
   ansible.builtin.get_url:
     dest: ~/.zfunctions/prompt_pure_setup
     mode: '0644'
-    url: https://raw.githubusercontent.com/sindresorhus/pure/v1.18.0/pure.zsh
+    url: https://raw.githubusercontent.com/sindresorhus/pure/v1.23.0/pure.zsh
     checksum: sha256:6d1d85f7f7f38d8c1299eea4fd65e5cce933e0358aee53a3eb0e8703cfa76b63
 
 - name: Install async zfunction
   ansible.builtin.get_url:
     dest: ~/.zfunctions/async
     mode: '0644'
-    url: https://raw.githubusercontent.com/sindresorhus/pure/v1.18.0/async.zsh
+    url: https://raw.githubusercontent.com/sindresorhus/pure/v1.23.0/async.zsh
     checksum: sha256:c9c199305a4972c5c72e63026d540ea93deed2ece6cd83cfdb057c864ed9edeb
 
 - name: Create ~/.zscripts directory
