@@ -182,6 +182,12 @@
         "tmux-plugins/tpm",
       ],
     },
+    {
+      "matchDataSources": [
+        "golang-version",
+      ],
+      "rangeStrategy": "bump",
+    },
   ],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
