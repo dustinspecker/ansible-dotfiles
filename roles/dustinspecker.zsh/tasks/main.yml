@@ -34,7 +34,7 @@
   ansible.builtin.get_url:
     dest: ~/.zscripts/z.sh
     mode: '0644'
-    url: https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
+    url: https://raw.githubusercontent.com/rupa/z/v1.12/z.sh
     checksum: sha256:f24e0791ba10f6a8301461da3fc50333eee2e009a19e5d0e9f3661f0d0446767
 
 - name: Clone zsh-syntax-highlighting
